@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/statistics-viewer.css" />
+    <script src="https://kit.fontawesome.com/cec80c6e23.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/statisticsViewer-queries.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Statistics viewer</title>
+    <script src="./scripts/main.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./scripts/barcharts/groupedBarChartSeries.js"></script>
+    <script src="./scripts/barcharts/createBarChartYear.js"></script>
+    <script src="./scripts/barcharts/createBarChartAll.js"></script>
+    <script src="./scripts/barcharts/groupedBarChartCountries.js"></script>
+    <script src="./scripts/linecharts/createLineChart.js"></script>
+    <script src="./scripts/linecharts/createLineChartAll.js"></script>
+    <script src="./scripts/linecharts/createLineChartCountries.js"></script>
+    <script src="./scripts/linecharts/createLineChartSeries.js"></script>
+    <script src="./scripts/statisticsUtil/addCountries.js"></script>
+    <script src="./scripts/statisticsUtil/exports.js"></script>
+    <script src="./scripts/horizonatallyBarchart/HorizontallyBarchartByCountries.js"></script>
+    <script src="./scripts/horizonatallyBarchart/HorizontallyBarchartBySeries.js"></script>
+    <link rel="stylesheet" href="resources/css/chart.css">
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div>
+        <nav id="mySidenav" class="sidenav">
+          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+          <div class="menu-elem"><a href="index.html">Home</a></div>
+          <div class="menu-elem"><a href="about.html">About</a></div>
+          <div class="menu-elem"><a href="statistics.html">Statistics</a></div>
+          <div class="menu-elem">
+            <a href="healthArticles.html">Health and Wellness</a>
+          </div>
+          <div class="menu-elem">
+            <a href="diseasesArticles.html">Diseases and Conditions</a>
+          </div>
+          <div class="menu-elem"><a href="programs.html">Programs</a></div>
+          <div class="menu-elem">
+            <a href="./documentation.html">Documentation</a>
+          </div>
+        </nav>
+        <div class="row">
+          <div id="main">
+            <p
+              class="main-nav"
+              onclick="openNav(window.matchMedia('(max-width: 650px)'))"
+            >
+              &#9776;
+            </p>
+          </div>
+        </div>
+        <!-- <div class="search-btn">
+          <form>
+            <input type="text" name="search" placeholder="Search.." />
+          </form>
+        </div> -->
+        <div id="user_profile">
+          <a href="#" class="user_profile"><i class="fas fa-user"></i> </a>
+        </div>
+        <div id="logoutButton">
+          <button id="logout" class="button-login">Log out</button>
+        </div>
+        <div id="loginButton">
+          <button id="modalBtn" class="button-login">Log in</button>
+        </div>
+        <div id="loginModal" class="modal">
+          <div id="container" class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <div class="form-container sign-up-container">
+              <form id="signup-form">
+                <h2>Create Account</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signup-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signup-password"
+                  name="password"
+                />
+                <p>Let's get started</p>
+                <button>Sign up</button>
+              </form>
+              <div class="error">
+                <p id="signup-error-message"></p>
+              </div>
+              <div class="change-1">
+                <button id="back" class="back">Back</button>
+              </div>
+            </div>
+
+            <div class="form-container sign-in-container">
+              <form id="signin-form">
+                <div class="after-signup">
+                  <p id="after-signup"></p>
+                </div>
+                <div class="after-signin">
+                  <p id="after-signin"></p>
+                </div>
+                <h2>Sign in</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signin-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signin-password"
+                  name="password"
+                />
+                <a href="#">Forgot your password?</a>
+                <button>Sign in</button>
+              </form>
+              <div class="change-2">
+                <p>You don't have an account?</p>
+                <button id="signUp" class="button-ghost">Sign up</button>
+              </div>
+              <div class="error">
+                <p id="signin-error-message"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="./scripts/userUtil/register.js"></script>
+      <script src="./scripts/userUtil/logout.js"></script>
+      <script src="./scripts/userUtil/verifyToken.js"></script>
+      <script src="./scripts/userUtil/signin.js"></script>
+      <script src="./scripts/login.js"></script>
+
+      <div class="title">
+        <h1>Obesity prevalance visualizer</h1>
+      </div>
+      <div class="hero-text-box">
+        <h2>
+          Find out everything you want to know about obessity on this site!
+        </h2>
+        <a class="button" href="./about.html">Get started</a>
+        <a class="button" href="./statisticsViewer.html">Show me more</a>
+      </div>
+    </header>
+      
+    <section id="statistics-viewer">
+        <div class="container">
+            <div class="viewer-container">
+                <div class="heading">
+                    <h2 >Statistics viewer</h2>
+                    <p> Percent of adults aged 18 years and older who have obesity </p>
+                </div>
+                <div class="export-menu">
+                    <p>Export as</p>
+                    <ul>
+                        <li><a href="#" id="downloadWebP" download="Chart.webp"><i class="fas fa-file-image"></i></a></li>
+                        <img id="canvasImage" style="display:none;"></img>
+                        <canvas style="display:none;" width="800" height="800"></canvas>
+                        <li><a href="#" id="downloadCsv" download="Chart.csv"><i class="fas fa-file-csv"></i></a></li>
+                        <li><a href="#" id="downloadSvg" download="Chart.svg"><i class="fas fa-file-code"></i></a></li>
+                        <li><i class="fas fa-window-maximize"></i></li>
+                    </ul>
+                </div>
+                <div class="statistics-grid">
+                    <div class="choose-menu">
+                        <button class="dropdown main-dropdown">Country
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropdown-content main-dropdown-content" id="dropdown-countries">
+                            </div>
+                        <button class="dropdown main-dropdown">Series
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                            <div class="dropdown-content main-dropdown-content">
+                                <div class="checkbox">
+                                    <input type="checkbox" class="Series" name="Series" value="Total">
+                                    <label for="series"> Total</label><br>
+                                </div>
+                                <button class="dropdown secondary-dropdown">Age
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                    <div class="dropdown-content">
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="age" value="All">
+                                          <label for="series">All</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="age" value="18 - 24">
+                                          <label for="series">Age 18-24</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="age" value="25 - 34">
+                                          <label for="series">Age 25-34</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="age" value="35 - 44">
+                                        <label for="series">Age 35-44</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="age" value="45 - 54">
+                                          <label for="series">Age 45-54</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="age" value="55 - 64">
+                                        <label for="series">Age 55-64</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="age" value="65 or older">
+                                          <label for="series">65 or older</label><br>
+                                      </div>
+                                    </div>
+                                <button class="dropdown secondary-dropdown">Education
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                  <div class="dropdown-content">
+                                      <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="education" value="All">
+                                        <label for="series">All</label><br>
+                                    </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="education" value="Less than high school">
+                                          <label for="series">Less than highschool</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                          <input type="checkbox" class="Series" name="education" value="High school graduate">
+                                          <label for="series">High school graduate</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="education" value="Some college or technical school">
+                                        <label for="series">Some college or technical school</label><br>
+                                      </div>
+                                      <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="education" value="College graduate">
+                                        <label for="series">College graduate</label><br>
+                                      </div>
+                                  </div>
+                                <button class="dropdown secondary-dropdown">Gender
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                  <div class="dropdown-content">
+                                    <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="gender" value="All">
+                                        <label for="series">All</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="gender" value="Female">
+                                        <label for="series">Female</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="gender" value="Male">
+                                      <label for="series">Male</label><br>
+                                    </div>
+                                  </div>
+                                  <button class="dropdown secondary-dropdown">Income
+                                    <i class="fa fa-caret-down"></i>
+                                  </button>
+                                  <div class="dropdown-content">
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="All">
+                                      <label for="series">All</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="income" value="Less than $15000">
+                                        <label for="series">Less than $15.000</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="$15000 - $24999">
+                                      <label for="series">$15.000 - $24.999</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="$25000 - $34999">
+                                      <label for="series">$25.000 - $34.999</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="$35000 - $49999">
+                                      <label for="series">$35.000 - $49.999</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="$50000 - $74999">
+                                      <label for="series">$50.000 - $74.999</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="income" value="$75000 or greater">
+                                      <label for="series">$75.000 or greater</label><br>
+                                    </div>
+                                  </div>
+                                  <button class="dropdown secondary-dropdown">Ethnicity 
+                                    <i class="fa fa-caret-down"></i>
+                                  </button>
+                                  <div class="dropdown-content">
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="ethnicity" value="All">
+                                      <label for="series">All</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" class="Series" name="ethnicity" value="Non-Hispanic White">
+                                        <label for="series">Non-Hispanic White</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="ethnicity" value="Non-Hispanic Black">
+                                      <label for="series">Non-Hispanic Black</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="ethnicity" value="Hispanic">
+                                      <label for="series">Hispanic</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="ethnicity" value="Asian">
+                                      <label for="series">Asian</label><br>
+                                    </div>
+                                    <div class="checkbox">
+                                      <input type="checkbox" class="Series" name="ethnicity" value="Hawaiian / Pacific Islander">
+                                      <label for="series">Hawaiian / Pacific Islander</label><br>
+                                  </div>
+                                  <div class="checkbox">
+                                    <input type="checkbox" class="Series" name="ethnicity" value="2 or more races">
+                                    <label for="series">2 or more races</label><br>
+                                  </div>
+                                  <div class="checkbox">
+                                    <input type="checkbox" class="Series" name="ethnicity" value="Other">
+                                    <label for="series">Other</label><br>
+                                  </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="chart">
+                      <p id="error-message">Plese select..</p>
+                      <section id="chart-area">
+                      </section>
+                    </div>
+                    <div class="chart-menu">
+                      <input type="image" class="Chart" alt="Bar Chart" value="bar-chart"
+                      src="./resources/css/img/bar-chart.PNG">
+                      <input type="image" class="Chart" alt="Line Chart" value="line-chart"
+                      src="./resources/css/img/line-chart.PNG">
+                      <input type="image" class="Chart" alt="Column Chart" value="column-chart"
+                      src="./resources/css/img/column-chart.PNG">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script  src="./scripts/statisticsUtil/ActivateChartVar2.js"></script>
+    <script src="./scripts/statisticsUtil/statisticsViewerMenu.js"></script>
+
+    <footer>
+      <div class="line"></div>
+      <div class="footer-content">
+        <div class="footer-about-us">
+          <h3>Obesity prevalance visualizer</h3>
+          <h3>About us</h3>
+          <p>
+            Why painful the sixteen how minuter looking nor. Subject but why ten earnest husband imagine sixteen
+            brandon.
+          </p>
+          <h3>Contact us</h3>
+          <div class="mail-tel">
+            <i class="fas fa-phone-alt"></i>
+            <p>07865678</p>
+          </div>
+          <div class="mail-tel">
+            <i class="fas fa-envelope-open-text"></i>
+            <p>obesity.prevalance@yahoo.com</p>
+          </div>
+        </div>
+        <div class="footer-information">
+          <h3>Informations</h3>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./statistics.html">Statistics</a></li>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li><a href="./diseasesArticles.html">Diseases and Conditions</a></li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-helpful">
+          <h3>Helpful links</h3>
+          <ul>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li><a href="./diseasesArticles.html">Diseases and Conditions</a></li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="social-media-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-end">
+        <p>2020 &#64;FilimonSimion. All rights reserved</p>
+      </div>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/cec80c6e23.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./resources/css/documentation.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Obesity prevelance visualizer documentation</title>
+    <script src="./scripts/main.js"></script>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div>
+        <nav id="mySidenav" class="sidenav">
+          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+          <div class="menu-elem"><a href="index.html">Home</a></div>
+          <div class="menu-elem"><a href="about.html">About</a></div>
+          <div class="menu-elem"><a href="statistics.html">Statistics</a></div>
+          <div class="menu-elem">
+            <a href="healthArticles.html">Health and Wellness</a>
+          </div>
+          <div class="menu-elem">
+            <a href="diseasesArticles.html">Diseases and Conditions</a>
+          </div>
+          <div class="menu-elem"><a href="programs.html">Programs</a></div>
+          <div class="menu-elem">
+            <a href="./documentation.html">Documentation</a>
+          </div>
+        </nav>
+        <div class="row">
+          <div id="main">
+            <p
+              class="main-nav"
+              onclick="openNav(window.matchMedia('(max-width: 650px)'))"
+            >
+              &#9776;
+            </p>
+          </div>
+        </div>
+        <!-- <div class="search-btn">
+          <form>
+            <input type="text" name="search" placeholder="Search.." />
+          </form>
+        </div> -->
+        <div id="user_profile">
+          <a href="#" class="user_profile"><i class="fas fa-user"></i> </a>
+        </div>
+        <div id="logoutButton">
+          <button id="logout" class="button-login">Log out</button>
+        </div>
+        <div id="loginButton">
+          <button id="modalBtn" class="button-login">Log in</button>
+        </div>
+        <div id="loginModal" class="modal">
+          <div id="container" class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <div class="form-container sign-up-container">
+              <form id="signup-form">
+                <h2>Create Account</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signup-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signup-password"
+                  name="password"
+                />
+                <p>Let's get started</p>
+                <button>Sign up</button>
+              </form>
+              <div class="error">
+                <p id="signup-error-message"></p>
+              </div>
+              <div class="change-1">
+                <button id="back" class="back">Back</button>
+              </div>
+            </div>
+
+            <div class="form-container sign-in-container">
+              <form id="signin-form">
+                <div class="after-signup">
+                  <p id="after-signup"></p>
+                </div>
+                <div class="after-signin">
+                  <p id="after-signin"></p>
+                </div>
+                <h2>Sign in</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signin-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signin-password"
+                  name="password"
+                />
+                <a href="#">Forgot your password?</a>
+                <button>Sign in</button>
+              </form>
+              <div class="change-2">
+                <p>You don't have an account?</p>
+                <button id="signUp" class="button-ghost">Sign up</button>
+              </div>
+              <div class="error">
+                <p id="signin-error-message"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="./scripts/userUtil/register.js"></script>
+      <script src="./scripts/userUtil/logout.js"></script>
+      <script src="./scripts/userUtil/verifyToken.js"></script>
+      <script src="./scripts/userUtil/signin.js"></script>
+      <script src="./scripts/login.js"></script>
+
+      <div class="title">
+        <h1>Obesity prevalance visualizer</h1>
+      </div>
+      <div class="hero-text-box">
+        <h2>
+          Find out everything you want to know about obessity on this site!
+        </h2>
+        <a class="button" href="./about.html">Get started</a>
+        <a class="button" href="./statisticsViewer.html">Show me more</a>
+      </div>
+    </header>
+
+    <div class="doc-container">
+      <h1 class="big-title">Documentation overview</h1>
+      <ol class="big-category">
+        <li><a href="#general-doc">General documentation</a></li>
+        <li><a href="#api-doc">API documentation</a></li>
+      </ol>
+      <h1 class="medium-title" id="general-doc">General documentation</h1>
+      <ol class="medium-category">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#interface">Interface and user experience</a></li>
+        <li><a href="#app-architecture">Application architecture</a></li>
+      </ol>
+      <h1 class="medium-title" id="api-doc">API documentation</h1>
+      <ol class="medium-category">
+        <li><a href="#api-accounts">API accounts</a></li>
+        <li><a href="#api-data">API obesity data</a></li>
+      </ol>
+      <h1 class="small-title" id="introduction">Introduction</h1>
+      <p>
+        Obesity Prevalence Visualizer is a web application for data
+        visualization. The purpose of this page is to visualize both data and
+        statistics about obesity in USA. We created statistics charts importing
+        data using an API REST service. You can visualize data from different
+        states, categories (total, age, gender, income, education, ethnicity)
+        and compare values from different states, categories and years and
+        export charts in csv, WebP and svg format. You can also create an
+        account on our web application.
+      </p>
+      <h1 class="small-title" id="interface">Interface and user experience</h1>
+      <ol class="medium-category">
+        <li>
+          <a href="#functionalities"
+            >Basic functionalities of our web application</a
+          >
+        </li>
+        <li><a href="#user-experience">User experience</a></li>
+        <li><a href="#design-motivation">Design motivation</a></li>
+      </ol>
+      <h1 class="small-title" id="app-architecture">
+        Application architecture
+      </h1>
+      <ol class="medium-category">
+        <li>
+          <a href="#overall-architecture">Overall architecture</a>
+        </li>
+        <li><a href="#data-structure">Data structure</a></li>
+        <li><a href="#code-management">Code management</a></li>
+        <li><a href="#video">Demo</a></li>
+      </ol>
+      <h1 class="small-title-content" id="functionalities">
+        Basic functionalities of our web application
+      </h1>
+      <p>
+        The purpose of our web application is obesity data visualization. On our
+        web application you can navigate as user or guest. Our web page has
+        multiple articles about health and wellness, diseases and conditions and
+        obesity statistics in USA. For visualizing statistics you need to go on
+        our statistics visualizer page where you can select the states , the
+        chart type and series value you want to see. You can also select more
+        states or series values to compare them. We have four types of charts,
+        map, line chart , bar chart and horizontal bar chart, for all on them
+        you can hover and see the exact value you want to see, also you can
+        hover the legend for bar chart and line chart to see only the bar or
+        line you want to see. You can export all our chats in cvs, svg and WebP
+        format.
+      </p>
+      <br />
+      <p>
+        You can create an account on our web application and log in. For
+        visualizing your personal data you can go on your profile page where you
+        can change your personal info, first name, last name, email and
+        password. If you have an admin account, from your profile you can also
+        manage user access and add statistics data.
+      </p>
+      <br />
+      <p>
+        To create our web application front-end we used HTML, CSS and
+        JavaScript. We used HTML to describe the structure and the meaning of
+        the website, CSS to describe a web page's appearance/presentation and
+        JavaScript to describe functionality and behavior. 
+        
+      </p>
+      <br/>
+      <p>For creating the
+        charts we used D3.js, a JavaScript library for manipulating documents
+        based on data. D3 helps you bring data to life using HTML, SVG, and CSS.
+        We started by sending a network requests to the obesity api service and
+        loading new information using JavaScript Fetch. After receiving the data
+        we create the SVG and defining the scales for the chart and add axes and
+        labels to the SVG. Next, we created bars/lines corresponding to the data
+        values. 
+      </p>
+    </br>
+      <p>To export the chart into svg format we encoded the SVG as a
+        Base64 Image.and then we created the link which we set to the href of
+        the svg. The data URI scheme consists of data:[media
+        type][;base64],data. Since we know that the media type is image/svg+xml
+        and that we want base64 representation of resulting data, we put in the
+        href value data:image/svg+xml;base64 to which we concatenated base64
+        representation of svg. To export as a WebP we created a canvas and an
+        img and set the src with the value data:image/svg+xml;base64 to which we
+        concatenated base64 representation of the svg. To export data as a csv
+        we concatenated all the chart info into a variable. Since we know that
+        the media type is text/csv and that we want charset=utf-8 representation
+        of the data, we put in the href value data:text/csv;charset=utf-8 to
+        which we concatenated encodeURI representation of chart info.
+      </p>
+      <div
+        class="mxgraph"
+        style="max-width: 100%; border: 1px solid transparent;"
+        data-mxgraph='{"highlight":"#0000ff","nav":true,"resize":true,"toolbar":"zoom layers lightbox","edit":"_blank","xml":"&lt;mxfile host=\"app.diagrams.net\" modified=\"2020-05-19T08:37:35.847Z\" agent=\"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\" etag=\"UBgDpfj6ujqIkZoLqfCi\" version=\"12.9.6\" type=\"device\"&gt;&lt;diagram id=\"v2f8_kwqScsA7h1Dnd1-\" name=\"Page-1\"&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;"}'
+      ></div>
+      <script
+        type="text/javascript"
+        src="https://app.diagrams.net/js/viewer.min.js"
+      ></script>
+      <h1 class="small-title-content" id="user-experience">
+        User experience
+      </h1>
+      <p>
+        We tried to create a web application that provide meaningful and
+        relevant experiences to users. Our main purpose regarding user
+        experience was to create a useful and usable application. We tried to
+        offer our clients more info about obesity, not only statistics. Our web
+        application is easy to use and desirable. We tried to anticipate what
+        users might need to do and ensuring that the interface has elements that
+        are easy to access, understand, and use to facilitate those actions.
+        Users can use the burger navigation menu, header and footer to navigate
+        to any other page from the current one. We focused on how information is
+        organized, structured, and presented to users, so we have three big
+        categories of information, statistis, articles about health and wellness
+        and articles about diseases and conditions
+      </p>
+      <br />
+      <p>
+        Our visual design is simple and aesthetically pleasing. We used the same
+        template presentation for the html pages using the same color pallete
+        and structure with the header, menu, sections and footer.
+      </p>
+      <h1 class="small-title-content" id="design-motivation">
+        Design motivation
+      </h1>
+      <p>
+        We created a web application with a simple interface. Our design is
+        consistent and use common UI elements (header, footer, navbar and common
+        section for similar types of pages). We create a pattern in layout and
+        design to help facilitate efficiency. Once a user learns how to do
+        something, they should be able to transfer that skill to other parts of
+        the site. We strategically used colors to direct attention toward or
+        redirect attention away from items using color, light, contrast, and
+        texture to your advantage. We mainly used different types of blue and
+        grey to keep the consistency.
+      </p>
+      <h1 class="small-title-content" id="overall-architecture">
+        Overall architecture
+      </h1>
+      <p>
+        We decided to usse a Service-Oriented Architecture for the Obesity Prevalence Visualizer. We created more services for our main application. This approach allows us to make use of services available in the network and integrate them into a coherent and system.
+      </p>
+      <br/>
+      <p>
+This kind of service is beneficial because the services are designed 
+as components and can be reused more effectively, thus reducing development time.
+ Also, a service is completely defined by its own documentation. They hide their logic,
+  which is encapsulated within their implementation. As services are independent of each other
+   they can be updated and modified easily without affecting other services. They have control 
+   over the logic they encapsulate and, from a service consumer point of view, there is no need 
+   to know about their implementation. Moreover, its facilities are easily available to anyone on request
+    and are more reliable because it is easy to debug small services rather than huge codes.
+        </p>
+        <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-19T06:47:14.897Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;9Q5buv9TAVzBw0ud9soC\&quot; version=\&quot;12.9.6\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;lJDl4_3dWlu3jOAPF5cr\&quot; name=\&quot;Page-1\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
+<p>
+  Our main page application is running at localhost:3000 and it’s the service consumer. 
+  Our REST APIs are represented by the Accounts API and Data Statistics API which are the service provider.
+   As it can be seen in the diagram the users access our frontend server through web from a browser. 
+   Then the front server sends requests to our REST APIs accessing their routes with their controllers 
+   and querying the database so that a final response can be formed.
+</p>
+<br/>
+<p>
+  After the frontend was ready, we started the services by creating our APIs. 
+  We implemented a REST API, a Representational State Transfer Interface, using the Nodejs
+   Technology with MongoDB Database. Our RESTful API uses existing HTTP methodologies and 
+   the communication is done through JSON responses. We use GET to retrieve a resource; 
+   PATCH to change the state of or update a resource; POST to create a new resource;
+    and DELETE to remove it. The status codes we sent are also representative for the 
+    response we send back. We use 400 - BAD REQUEST when there are errors. When there is a
+     successful response, we send 200 - OK for GET requests, 201 - CREATED for POST requests, 
+     204 - NO CONTENT and UPDATED for DELETE and PATCH responses.
+</p>
+  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-19T09:39:14.066Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;vARv8cvaKBGX85lvhSov\&quot; version=\&quot;12.9.6\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;lJDl4_3dWlu3jOAPF5cr\&quot; name=\&quot;Page-1\&quot;&gt;7Vxbd5s4EP41fowPiJt5dGy3zfaWTdLt7pOPbGSbFiMKuHH661cCiZuETWJ8i+O2pzAIIWZG3zeSBnW0wXL9PoTB4jN2kNcBirPuaMMOAKoOQIf+VZynVGKpWiqYh67DCuWCe/cPYkKFSVeug6JSwRhjL3aDsnCKfR9N45IMhiF+LBebYa/81ADOkSC4n0JPlH53nXiRSnvAyuUfkDtf8Cerpp1eWUJemL1JtIAOfiyItFFHG4QYx+nRcj1AHlUe10t637uaq1nDQuTHTW7Q/Pn6cfz4sLY+Yt3/vpy8f1heMWP8ht6KvTBrbPzENYAcohB2isN4gefYh94ol16HeOU7iD5GIWd5mU8YB0SoEuEPFMdPzLpwFWMiWsRLj10lbxA+/Uvv7xr89D9WXXIyXJfOnthZ2lbawFqdMFGEV+GUlZp7T38NP9hwFt7OPPXnza+xbV1p7MVjGM5RvEFjZmY64vMILxFpELkvRB6M3d/lhkDmfPOsXHbrLXZJE4HCOoquMC9h3UQzLKKKUiVpy9h9uZ3JQaEhuSixvtwTNipgkytEcYh/ogH2cJgINCf5EUtkzk3NmRbj3UUteQg9g5MIe6sY9cMpc4lEmp2BzLQSS/5GYYzWBZFoC3ZV08o6BUqm08e8K6smK7UodGNLqTdgSfHP1rKsw5keeez1DCcOMc20a/5aUWwgqtCU5FcUmXP6f//2htxyj8LfLvFuVtEk5Je5hDQ1rZ2LK3Z1YLTI+i9DUjhJrirlnjpzPa9gf0Pt6e+0zOT8io99lDpFQOtYrueUHLrzaQC6C7S+IY8gl4MwPRjCwB1DghdPsTuN6AUYxux5Hpwg7xZHbuwmRcPURtfUC1yC0p8q15eu4ySYBD13TgUemhXL95k4KxcFcOr6809JsaHB7FB4RTv5MTl3V7mHbu5X2/2W+aki8VJdF51UY0yzI/QYpU5ypdpV4MGzWYT2gjl2A8w5KP2UyCfnoo308xK20SVss9F7KhzXOv9oRgUrddBVVDv/9RqRUT8M4VOhWEALRPWPBVav8litHMNsb2bFL9MWtOqluuilA89F7MWORZBVZJySBqHwOdAo3MHBcYLjGC8FcFSeAY6PCzdG9+R2Knkk6J/Xds1qb4vmVa2MYICHUgX4tCQc36vAXGscrzcIql/MuJZB/zyLcVcRCiu02pC7Ms9vbAwZdxkS5WsqL7gjcF1V+IvQFzgcf9VHcwuVR1t3o/sHUiYN1fp3gw83D6PBw7e7USE6y0sLnkIUH5c9Qmr5optwZ0j7Gwtr2NlDwolXQKnppJjYeuYlSLUggIF8gWAF+GijD9tqyYq22IV13RbdyNxXnG7r2+L03EQ8KKcXrqIEBPukgGoHazFi/zpBBJHpq9+GiNSOfBq4K/+40Yoo9g+isTtcUkv4kyh4Rgwv+slWnM8YISRt+lOAH0bbpF7jumMMaV0kaIpyKmrB5MCyyx1XE20uxW3Qgs2lI3v1NCZDpAHf1jCzfq6iwZyGumtQuZPeze1qP/jEg+DHEgNsmHgoc5IGRNdWZazYBpxJVWxtQ7MXzDog3+HhfQ1CidMRpzXvMPXwyhnn73FeMw9bXPQ5k5eveeJBDnj2a4N6lS+ObMV665hYz5v5esDePjWsV2WTai8H+1EO84oI6Z8RcXqnngLeAP+4gF8X2V0c4vNnn/VUcztMYTVkCqAdlSlkMetrYgrdPDpT9A7IFLcwXkSyMcEbc5wmc9TEiZfHHLJecpHMAbSGzJHOf7S+SGn0yqt/ul1BxvZSZKSvpZ9aDHGIbKndPEHfU7pUZYbNVA7rCaDBVPF5BSeaWelbR49OwNYlmBajkwGpMcSel6y/vIUo5xGi1A1QLi5EkWSoHIWY1m5c4CVyltESOc5ZiZ5wUjoBMuNcsv8BcTMyM6ornC0lW5m6/Dl1yVamruxUXtc3l6++d6X8zslcG439ephbiIplzA0OydyabEX35cw9hIRGYXS++c0pM0e/vAvg5Lqh38VxstFgpeu8lhj1pukkaabWsSaODdm44TIUb4BjKl5/fYk8FuhWYqaeiF8qh5kigHFQa1/L4rrIHYoC7FOCbIv3XpBl7OF5NIaBexIc1w6X1U1ebeAy/r1GicvAXrjMPBSTmQ369SGnPbOTZhPg8lEpH6/KR6UtgrcBmoL3rqxZMyoztK5V9h1Lscu17Hm2lKvg9RCDYVlNiMHI6OMg1GDUf45AYNIvKZwPsmja+BUDW5q1zpLFhUFYFMN4FaVlZtAlbRkURl9p9WLep+SBAXSc5KsEWpNCU+TTDqcsiRO6vihv2sLWXhWFIXVCWgRPftBNBepe9I1u26Tbuuj10uj2ND5DeOl685Hpln8ldCy6BaraBcelW66CggMV0TtaTacoSvGbYI9KDeDAGJYR76zpWa3s/CAlZ/PA5Kxs79ZvBLLbeK2mS18YgRjiEkfa58Xv1Y/w0eBuEzLK9o4t289lb98MGuLYOI2Oz1zRBv9CZoOitYMqukE6cAk+8Sr2XJ9AId8XTNmi/2dvqJBtk1C1XIwDCeo+ognBXBx1f0TYH4MWjKSp5d5gqlq3J5hJlrSjGl2wL0M1SJe8NEMZJ2moBt/AnVfYV81hMyXbCEhz2PYW9Jli0PcuJPEO8p1Oum+XLOHMw8RHFzgix31N4ZR3pDhxxto7Dkg0NMPhchyl242dRoZZS1MPb5Fj4q4iyd4T00fJK/1aoUgcGJ5bYAMqSVDZjlIF09qHDGxMkS+dCTkn6ma1n7O6DbU6Ua5LQPmgIbsp8h7TNXHymoXUc1O73qsoXfZVsnJIrVsiEyZ7nipX5N91fzi+G/39Ldkp6cxVL3q8NAzRD6p8MRcJZMr/+lGMQICisquDu1H/YTSUFdFZkS9fx4OvXx5GX87feJkJuOlkuZSyca/xfNN1aCjIN39OGTzfQlsb/Q8=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>    
+<p>The first API we created was the Statistics Data API. This is running at localhost:3001 and is used for handling the data manipulation for the statistics. We mostly make GET requests from frontend, to the data so we can create the charts, but we can also add new data for the existing countries or for upcoming years using POST request. We can modify the data from the database using PATCH request or even remove data from database with a DELETE request.
+</p>
+<br/>
+<p>
+  The next API we developed was the Accounts API, running at localhost:3002 and used for handling the user authentication on the main web application. When a user wants to register, we use a POST method to database where we save his email and encrypted password so that he can log in after registered successfully. When a user wants to sign in, we generate a unique token which we set in the Local Storage only if the email and
+  password he entered are a match in the auth_management database. We can also perform a log out for a user, moment in which the token corresponding to his session is sent in the request body and we set the token to null. A logged in user can add or change information from his profile such as: he can add his first name, last name, change his email or even his password. These operations make a POST request each time to the Account API sending the token in the request body. If the logged in user is an admin, he can send requests to the server to restrict/unrestrict normal users based on their email address, so that those users will not be able to log in in the future. Of course, we can also use the API to GET all users or a single logged in user based on his token and to DELETE all users.</p>
+  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;page&quot;:1,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-19T16:09:50.012Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;yQxyQ4fvM53ny5UavI97\&quot; version=\&quot;12.9.6\&quot; type=\&quot;device\&quot; pages=\&quot;2\&quot;&gt;&lt;diagram id=\&quot;lJDl4_3dWlu3jOAPF5cr\&quot; name=\&quot;Page-1\&quot;&gt;7Vxbd5s4EP41fowPiJt5dGy3zfaWTdLt7pOPbGSbFiMKuHH661cCiZuETWJ8i+O2pzAIIWZG3zeSBnW0wXL9PoTB4jN2kNcBirPuaMMOAKoOQIf+VZynVGKpWiqYh67DCuWCe/cPYkKFSVeug6JSwRhjL3aDsnCKfR9N45IMhiF+LBebYa/81ADOkSC4n0JPlH53nXiRSnvAyuUfkDtf8Cerpp1eWUJemL1JtIAOfiyItFFHG4QYx+nRcj1AHlUe10t637uaq1nDQuTHTW7Q/Pn6cfz4sLY+Yt3/vpy8f1heMWP8ht6KvTBrbPzENYAcohB2isN4gefYh94ol16HeOU7iD5GIWd5mU8YB0SoEuEPFMdPzLpwFWMiWsRLj10lbxA+/Uvv7xr89D9WXXIyXJfOnthZ2lbawFqdMFGEV+GUlZp7T38NP9hwFt7OPPXnza+xbV1p7MVjGM5RvEFjZmY64vMILxFpELkvRB6M3d/lhkDmfPOsXHbrLXZJE4HCOoquMC9h3UQzLKKKUiVpy9h9uZ3JQaEhuSixvtwTNipgkytEcYh/ogH2cJgINCf5EUtkzk3NmRbj3UUteQg9g5MIe6sY9cMpc4lEmp2BzLQSS/5GYYzWBZFoC3ZV08o6BUqm08e8K6smK7UodGNLqTdgSfHP1rKsw5keeez1DCcOMc20a/5aUWwgqtCU5FcUmXP6f//2htxyj8LfLvFuVtEk5Je5hDQ1rZ2LK3Z1YLTI+i9DUjhJrirlnjpzPa9gf0Pt6e+0zOT8io99lDpFQOtYrueUHLrzaQC6C7S+IY8gl4MwPRjCwB1DghdPsTuN6AUYxux5Hpwg7xZHbuwmRcPURtfUC1yC0p8q15eu4ySYBD13TgUemhXL95k4KxcFcOr6809JsaHB7FB4RTv5MTl3V7mHbu5X2/2W+aki8VJdF51UY0yzI/QYpU5ypdpV4MGzWYT2gjl2A8w5KP2UyCfnoo308xK20SVss9F7KhzXOv9oRgUrddBVVDv/9RqRUT8M4VOhWEALRPWPBVav8litHMNsb2bFL9MWtOqluuilA89F7MWORZBVZJySBqHwOdAo3MHBcYLjGC8FcFSeAY6PCzdG9+R2Knkk6J/Xds1qb4vmVa2MYICHUgX4tCQc36vAXGscrzcIql/MuJZB/zyLcVcRCiu02pC7Ms9vbAwZdxkS5WsqL7gjcF1V+IvQFzgcf9VHcwuVR1t3o/sHUiYN1fp3gw83D6PBw7e7USE6y0sLnkIUH5c9Qmr5optwZ0j7Gwtr2NlDwolXQKnppJjYeuYlSLUggIF8gWAF+GijD9tqyYq22IV13RbdyNxXnG7r2+L03EQ8KKcXrqIEBPukgGoHazFi/zpBBJHpq9+GiNSOfBq4K/+40Yoo9g+isTtcUkv4kyh4Rgwv+slWnM8YISRt+lOAH0bbpF7jumMMaV0kaIpyKmrB5MCyyx1XE20uxW3Qgs2lI3v1NCZDpAHf1jCzfq6iwZyGumtQuZPeze1qP/jEg+DHEgNsmHgoc5IGRNdWZazYBpxJVWxtQ7MXzDog3+HhfQ1CidMRpzXvMPXwyhnn73FeMw9bXPQ5k5eveeJBDnj2a4N6lS+ObMV665hYz5v5esDePjWsV2WTai8H+1EO84oI6Z8RcXqnngLeAP+4gF8X2V0c4vNnn/VUcztMYTVkCqAdlSlkMetrYgrdPDpT9A7IFLcwXkSyMcEbc5wmc9TEiZfHHLJecpHMAbSGzJHOf7S+SGn0yqt/ul1BxvZSZKSvpZ9aDHGIbKndPEHfU7pUZYbNVA7rCaDBVPF5BSeaWelbR49OwNYlmBajkwGpMcSel6y/vIUo5xGi1A1QLi5EkWSoHIWY1m5c4CVyltESOc5ZiZ5wUjoBMuNcsv8BcTMyM6ornC0lW5m6/Dl1yVamruxUXtc3l6++d6X8zslcG439ephbiIplzA0OydyabEX35cw9hIRGYXS++c0pM0e/vAvg5Lqh38VxstFgpeu8lhj1pukkaabWsSaODdm44TIUb4BjKl5/fYk8FuhWYqaeiF8qh5kigHFQa1/L4rrIHYoC7FOCbIv3XpBl7OF5NIaBexIc1w6X1U1ebeAy/r1GicvAXrjMPBSTmQ369SGnPbOTZhPg8lEpH6/KR6UtgrcBmoL3rqxZMyoztK5V9h1Lscu17Hm2lKvg9RCDYVlNiMHI6OMg1GDUf45AYNIvKZwPsmja+BUDW5q1zpLFhUFYFMN4FaVlZtAlbRkURl9p9WLep+SBAXSc5KsEWpNCU+TTDqcsiRO6vihv2sLWXhWFIXVCWgRPftBNBepe9I1u26Tbuuj10uj2ND5DeOl685Hpln8ldCy6BaraBcelW66CggMV0TtaTacoSvGbYI9KDeDAGJYR76zpWa3s/CAlZ/PA5Kxs79ZvBLLbeK2mS18YgRjiEkfa58Xv1Y/w0eBuEzLK9o4t289lb98MGuLYOI2Oz1zRBv9CZoOitYMqukE6cAk+8Sr2XJ9AId8XTNmi/2dvqJBtk1C1XIwDCeo+ognBXBx1f0TYH4MWjKSp5d5gqlq3J5hJlrSjGl2wL0M1SJe8NEMZJ2moBt/AnVfYV81hMyXbCEhz2PYW9Jli0PcuJPEO8p1Oum+XLOHMw8RHFzgix31N4ZR3pDhxxto7Dkg0NMPhchyl242dRoZZS1MPb5Fj4q4iyd4T00fJK/1aoUgcGJ5bYAMqSVDZjlIF09qHDGxMkS+dCTkn6ma1n7O6DbU6Ua5LQPmgIbsp8h7TNXHymoXUc1O73qsoXfZVsnJIrVsiEyZ7nipX5N91fzi+G/39Ldkp6cxVL3q8NAzRD6p8MRcJZMr/+lGMQICisquDu1H/YTSUFdFZkS9fx4OvXx5GX87feJkJuOlkuZSyca/xfNN1aCjIN39OGTzfQlsb/Q8=&lt;/diagram&gt;&lt;diagram id=\&quot;-NBQ7AMqyvKkwk4CQQ3u\&quot; name=\&quot;Page-2\&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
+<h1 class="small-title-content" id="data-structure">
+  Data Structure
+</h1>
+<p>The first database we created was the obesity_usa database in which we stored data in more collections based on its category.</p>
+  <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-19T08:40:23.043Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;RE0h3GjUFrD_XdSc5A94\&quot; version=\&quot;12.9.7\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;rQvfrbw0V8R44ZjdeogB\&quot; name=\&quot;Page-1\&quot;&gt;7VpZc5swEP41fvQMBsdOH2O7bpNpJ53S4zEjgwC1AlEhYru/vqvDxgQY44PmdGZisTpW++0nsbvjnjONVx84SqPPzMe0Z1v+qufMerZ9ObqE/1Kw1oKhNdCCkBNfi3YELvmLjdAy0pz4OCsNFIxRQdKy0GNJgj1RkiHO2bI8LGC0rDVFIa4IXA/RqvQn8UVkzLqwCvlHTMJoo3lgmZ4YbQYbQRYhny13RM77njPljAndildTTCV2G1z0vHlD73ZjHCeizQQ3XH790qffJzfzOLc/rYMbYfXNKveI5sbgnj2isN4kS1Eidy3WBorRn1xudRKwRPQz5agrGDAYpiv4gg74v4yIwH2Y6pnehPEY0WIytEL1PZ5sFMGOtS7TY8QL3qF2e4TiFBrJIkv13HoR3ahUDKOMl/bSs50guLSkx/dr2Bqrlysba1S0NLdG2dEbvQN6SPzk6reLX3CErv3GzU73mNGxz/4HL8/GDMsaB0FQ1XA9awTRuMEVnCRhGe1HOCEvAu0ZzjxOUkFY8pxg98n9aZ74/0h/Yh6SMF8tJEDngRrENUg8Y3AkHd/AeXhGkUAuyzkcjmKhh+i8Tmi+sZR4b6jUEObuhwpZ385SWYMLi1F8p/KoF4jN8cBog+ESDoi+igcvEZ/TuFPC59p/kQidxKDta5xkKUXrW+7j1rHOk0BoPDtwI3ZJma0CWVfHsbMlRxLTSMQUngbQRFmqazABWWFfbldw9htPtzA7jvPu3Xwuh1ISJiCjOCg03WMu8KqxvjHYVk3i1QfMYiz4GoZsJmxKRqbSNHDM87Ko29hDI4t2ajZbITK1onC7dlFOgYapqBxQXRk2VldOS/gBUApAAxMzuYgX4Rip8UWGogfK4pY8nhb2c01d/ZgJJHCm2yTxwFzdDnGiKK2miCghHhHrpkNUqGk8Aw/oA84VZcZUCDJSHwkEoXRHHlzIvx3ieEAL2KozkaSBO4temY6Y+L5UOKkjK2c5WCh9ZhmwS+SUn27YOGpJxlFXXLzYw8Vqktu+uFS9Mo9ldpt8/TzvCqsvnYMR33MjPhYSrfLp80FRPuLqfpAsBOX4nqBdf9Qe+zrkutjquVLwpoyqv7kcZZEGxfhgox/PwN00uikkqTi6a2uMZPJ17rqlAd1j2NplXQSip2b8T82BtwucqVDAkm8h2/qpX1kyvEUiz1q7tnWgq0SPdYz2FRcqXmBbeFLMZWSiAq9jTH4qPGydLKsbM1/AOBwyGac8c/8fkAU3m/7UvXtYIluxszYuOMjjZ5G2C1wPT0rOmmI8SGPUp1eT+ICr5iozPkPy4Yz3p8JOXfYxuOwq/Rh3lArPmJfHAItMhP0WycPrzUiH9kWJFOOajNSp4cQR1RF4LH7Xovp2fhzkvP8H&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
+<p>We exported data from BRFSS in csv format. We formatted the data so that we kept only the essential information and saved it in csv and json format. Then we imported the documents in our database and we formatted the data again so that would have the same structure in all collections. That made the work with those data easier. The fields that we access the most are Description representing the year, LocationDesc representing the name of the state, Data_value representing the obesity percentage and Stratification1 representing the subcategory of the collection.</p>
+<br/>
+<p>The next database we created was the auth_management database with the users collection in which we store the information about all users that register on our web application. A user can have the userType : user or admin. A user can register with an email and encrypted password and then he can log in with those credentials. He can log out, modify first name, last name, email and even the password. When a user is logged in he is identified by his token. If the user is admin he can set the restricted field of a user to true or false, and that specifies if that user can log in or not anymore.</p>
+<br>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;page&quot;:1,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2020-05-19T08:48:07.939Z\&quot; agent=\&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36\&quot; etag=\&quot;jQFz4qwIZ-gzd-7mmHyA\&quot; version=\&quot;12.9.7\&quot; type=\&quot;google\&quot; pages=\&quot;2\&quot;&gt;&lt;diagram id=\&quot;rQvfrbw0V8R44ZjdeogB\&quot; name=\&quot;Page-1\&quot;&gt;7VpZc5swEP41fvQMBsdOH2O7bpNpJ53S4zEjgwC1AlEhYru/vqvDxgQY44PmdGZisTpW++0nsbvjnjONVx84SqPPzMe0Z1v+qufMerZ9ObqE/1Kw1oKhNdCCkBNfi3YELvmLjdAy0pz4OCsNFIxRQdKy0GNJgj1RkiHO2bI8LGC0rDVFIa4IXA/RqvQn8UVkzLqwCvlHTMJoo3lgmZ4YbQYbQRYhny13RM77njPljAndildTTCV2G1z0vHlD73ZjHCeizQQ3XH790qffJzfzOLc/rYMbYfXNKveI5sbgnj2isN4kS1Eidy3WBorRn1xudRKwRPQz5agrGDAYpiv4gg74v4yIwH2Y6pnehPEY0WIytEL1PZ5sFMGOtS7TY8QL3qF2e4TiFBrJIkv13HoR3ahUDKOMl/bSs50guLSkx/dr2Bqrlysba1S0NLdG2dEbvQN6SPzk6reLX3CErv3GzU73mNGxz/4HL8/GDMsaB0FQ1XA9awTRuMEVnCRhGe1HOCEvAu0ZzjxOUkFY8pxg98n9aZ74/0h/Yh6SMF8tJEDngRrENUg8Y3AkHd/AeXhGkUAuyzkcjmKhh+i8Tmi+sZR4b6jUEObuhwpZ385SWYMLi1F8p/KoF4jN8cBog+ESDoi+igcvEZ/TuFPC59p/kQidxKDta5xkKUXrW+7j1rHOk0BoPDtwI3ZJma0CWVfHsbMlRxLTSMQUngbQRFmqazABWWFfbldw9htPtzA7jvPu3Xwuh1ISJiCjOCg03WMu8KqxvjHYVk3i1QfMYiz4GoZsJmxKRqbSNHDM87Ko29hDI4t2ajZbITK1onC7dlFOgYapqBxQXRk2VldOS/gBUApAAxMzuYgX4Rip8UWGogfK4pY8nhb2c01d/ZgJJHCm2yTxwFzdDnGiKK2miCghHhHrpkNUqGk8Aw/oA84VZcZUCDJSHwkEoXRHHlzIvx3ieEAL2KozkaSBO4temY6Y+L5UOKkjK2c5WCh9ZhmwS+SUn27YOGpJxlFXXLzYw8Vqktu+uFS9Mo9ldpt8/TzvCqsvnYMR33MjPhYSrfLp80FRPuLqfpAsBOX4nqBdf9Qe+zrkutjquVLwpoyqv7kcZZEGxfhgox/PwN00uikkqTi6a2uMZPJ17rqlAd1j2NplXQSip2b8T82BtwucqVDAkm8h2/qpX1kyvEUiz1q7tnWgq0SPdYz2FRcqXmBbeFLMZWSiAq9jTH4qPGydLKsbM1/AOBwyGac8c/8fkAU3m/7UvXtYIluxszYuOMjjZ5G2C1wPT0rOmmI8SGPUp1eT+ICr5iozPkPy4Yz3p8JOXfYxuOwq/Rh3lArPmJfHAItMhP0WycPrzUiH9kWJFOOajNSp4cQR1RF4LH7Xovp2fhzkvP8H&lt;/diagram&gt;&lt;diagram id=\&quot;00wWp7C1CZEPnvywvHLF\&quot; name=\&quot;Page-2\&quot;&gt;7VnbctowEP0aHun4wvUR40BoC0nrMkmfOsKWQY1sObIIkK/vyhYXxw4QAklDa2awWF1We/Z4V2tKZjuYdzmKJn3mYVoyNG9eMu2SYTRqDfiWgkUqqGh6Khhz4qWiDYFDHrESako6JR6OMwMFY1SQKCt0WRhiV2RkiHM2yw7zGc1qjdAY5wSOi2heekM8MVFmVbW1/BKT8WSpWddUT4CWg5UgniCPzTZE5kXJbHPGRNoK5m1MJXZLXEa3t47jNq8/x1Zn2P+JuYf65XSxzkumrEzgOBQHLz23r7xWpezfLfqzXou3L7u972qK9oDoVOFVMmoUlFhxhEJptFgoJGv3U2mp5bNQlOPEzy0YoFeiOdygA75nEyJwGaa6qjdkPEB0PRlaY3VHQQSNcBTLW6luLRWDBanu1chEPOJvuBvp3yIRXapMCEsZz+ylZJi+39AkgXZrWBmbLpc1VqnY09wCZQdv9BfQReInV78a/YYnsuc9u9n2DjNO7LP34OnBzNC0uu/7eQ3TGPMfiwg/D2VWW7JdR3ASjrMOeIeH5iwcINgdDj8s+h55eJ1D3h5wjmMA0BX4+cBShLoFpwYsLdsFO4gLUPmAQOEAEXoSZp4NRBGK4xnj3r759d9EySc8FgMU4LOH6XCMYDxFK5TO55Gr25vpKLenfbZqZLZjJDnKSVOUPYOiEQZNREDhlw5NFEdpHeeTOYR4MEhwSLHtlTNM02w2Ox05lJJxCDKK/bWmB8wFnj8p3nZUPvqqHIMyFrMAC76AectVaqrMUSWsvqzoZuuC0FiWfZONYnAlRKoIHa/WXhda0FC1VnHd1bnSG/fO8M66DJxvtt/9Nhw8bqm7Xnf0B5QpoE9YGMtF3AnkkKRqlkcRedSMt7IhS/cnfgeviKyrc56tJVcScSjdkPtV+dnwuAv+xNBpSW8TqNZbqiMgnicVWkUs42waepJTtqYAybBKXielkfGpmiFSNc8jvVnN86h2BBrZ9eA2ak0rldBp9/yb61lQ7+ykUf48euRY81ZlT1nRF4YhLyDhjgj2N1m6vb7QpGVoCvSR78U2Ru4drYs8/X7WZg73+5w1pP2CA31BjGiMX2z/lncPr41vR41WTyJichXFUEC2k2THU8WxinZgOmwcIYwR2u0PvoZDch8O7C+m3rP44mTZ0GbuNACoZC70cOxyEsnU+D/h7UcUs5FNd7UCnpgFPKm8nCfwc/0iPenb+DfCvPgD&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer.min.js"></script>
+<p>We also payed attention to NoSQL Injection. NoSQL Injection happens when a user enter an input which with we will make a database query, but that input is not necessary the input we thought of, it’s usually something that want to access our all database info or even modify it. An example would be when we query the database to find a document by its token. If the token we receive looks like this: “token”: { “$gte" : ”" }, then instead of returning only the user with a token it will return all users from database. So, to prevent that kind of attack we always verify if the token we get is a valid token with a regex. We do the same for the email so there will not exist malformed email addresses.</p>
+<h1 class="small-title-content" id="code-management">
+  Code management
+</h1>
+<p>We used Github for our code management: https://github.com/andrasimion99/twProject . This is the repository in which we both, Filimon Raluca and Simion Andra, pushed our code in the master branch.</p>
+<br>
+<p>For the frontend code, we modularized it such that we have the folder /views with all our .html pages. There is also the /resources/css folder within which we find all the .css files and a folder /img with the images we used in our web application. Moreover, we can find the /scripts folder which contains all the .javascript files we used, separated in different folders based on their purpose: /statisticsUtil, /userUtil, /adminUtil, all kind of charts etc.</p>
+<br>
+<p>As for our APIs, we modularized our code in separated folders and files respecting the MVC structure. So, we have a model folder representing the schema with its methods for the resources from the database. Also, we have the router folder in which we have the connection to database, we parse the request URL, the query parameters and the request body depending on the method received. Also, the router folder contains a file in which we specified each path and method to a handler. The /controllers folder contains all controller classes that have the handlers methods for requests. The config folder contains all configuration and constants such as the PORT for the service and the MONGO_CONNECTION_URL.</p>
+<br>
+<p>We also resorted to the use of tests for the APIs so that we insured the requests we make are returning the expected response both for the Accounts API and the Data Statistics API. We tried making unit tests for GET/POST requests making a call to the API with http and checking the response with assert.</p>
+<div id="work">
+  <div class="work-flex">
+    <h1 class="small-title">Filimon Raluca</h1>
+    <ul class="medium-category">
+      <li><p>General application design</p></li>
+      <li><p>Line chart, chart integration</p></li>
+      <li><p>Accounts integration</p></li>
+      <li><p>Database population</p></li>
+      <li><p>Obesity USA API</p></li>
+      <li><p>Accounts API</p></li>
+      <li><p>API unit test</p></li>
+      <li><p>Documentation</p></li>
+    </ul>
+  </div>
+  <div class="work-flex">
+  <h1 class="small-title">Simion Andra</h1>
+  <ul class="medium-category">
+    <li><p>General application design</p></li>
+    <li><p>Map, bar chart, horizontal bar chart, charts export</p></li>
+    <li><p>Accounts integration</p></li>
+    <li><p>Database population</p></li>
+    <li><p>Scripts for database</p></li>
+    <li><p>Obesity USA API</p></li>
+    <li><p>Accounts API</p></li>
+    <li><p>API unit test</p></li>
+    <li><p>Documentation</p></li>
+  </ul>
+</div>
+</div>
+<h1 class="small-title-content" id="video">
+  Demo
+</h1>
+<h1 class="small-title" id="api-accounts">API accounts</h1>
+      <ol class="medium-category">
+        <li><a href="#api-accounts-response">Response structure</a></li>
+        <li><a href="#api-users">/api/users</a></li>
+        <li><a href="#api-register">/api/users/register</a></li>
+        <li><a href="#api-login">/api/users/login</a></li>
+        <li><a href="#api-logout">/api/users/logout</a></li>
+        <li><a href="#api-profile">/api/users/profile</a></li>
+        <li><a href="#api-password">/api/users/changePassword</a></li>
+        <li><a href="#api-restrict">/api/users/restrict</a></li>
+        <li><a href="#api-unrestrict">/api/users/unrestrict</a></li>
+      </ol>
+      <h1 class="small-title" id="api-data">API obesity data</h1>
+      <ol class="medium-category">
+        <li><a href="#api-data-response">Response structure</a></li>
+        <li><a href="#api-states">/api/states</a></li>
+        <li><a href="#api-age">/api/age</a></li>
+        <li><a href="#api-gender">/api/gender</a></li>
+        <li><a href="#api-income">/api/income</a></li>
+        <li><a href="#api-ethnicity">/api/ethnicity</a></li>
+        <li><a href="#api-education">/api/education</a></li>
+      </ol>
+      <h1 class="small-title" id="api-accounts-response">Response structure</h1>
+      <p>The structure of the API responses' body is as follows:</p>
+      <ul class="small-category">
+        <li>
+          for successful responses, a JSON object containing the properties:
+          <ul>
+            <li>
+              <mark class="highlight">status</mark>:
+              <mark class="highlight">success</mark>
+            </li>
+            <li>
+              <mark class="highlight">data</mark>: An object, structure detailed
+              for each route below.
+            </li>
+          </ul>
+        </li>
+        <li>
+          for unsuccessful responses, a JSON object containing the properties:
+          <ul>
+            <li>
+              <mark class="highlight">status</mark>:
+              <mark class="highlight">fail</mark>
+            </li>
+            <li>
+              <mark class="highlight">error</mark>: An object containing a
+              message property, and sometimes additional helpful properties.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h1 class="small-title-content" id="api-users">/api/users</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the users from the db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          token - It will return only the user with that token.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+{
+    "status": "success",
+    "data": [
+        {
+            "userType": "user",
+            "token": null,
+            "restricted": false,
+            "_id": "5eba65e5f167ce03401fd428",
+            "email": "filimon.raluca@gmail.com",
+            "password": "$2a$08$oE6bzdKTEMXTHZIVRFgb7.X2ytw51ELeYF69QGfKJyc7LSDfLPTje",
+            "__v": 0
+        },
+        {
+            "userType": "user",
+            "token": null,
+            "restricted": false,
+            "_id": "5eba6ca9f167ce03401fd429",
+            "email": "ralucik_2006@yahoo.com",
+            "password": "$2a$08$1R/RQ6FIGJ8Rj1BmU1hHN.V3uEF6T/UCu1uZdSFYCXh4LwPFzNOWy",
+            "__v": 0
+        }
+    ]
+}</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Deletes all users from db.
+      </p>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+      <h1 class="small-title-content" id="api-register">/api/users/register</h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a user with an email and a password into db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+    "email": "andrasi@gmail.com",
+    "password": "andra"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/register</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+        "userType": "user",
+        "token": null,
+        "restricted": false,
+        "_id": "5ebfc318ba921b58b838ce61",
+        "email": "andrasi@gmail.com",
+        "password": "$2a$08$4iY0wY/E4K9wtCroNhWFSO.3qw9d/tyOK.GGGmGbTlW89dfVuYnwK",
+        "__v": 0
+    }
+}</code></pre>
+      <h1 class="small-title-content" id="api-login">/api/users/login</h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Generates and sets the token for an user from db.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+    "email": "andrasi@gmail.com",
+    "password": "andra"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/login</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+        "userType": "user",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJmYzMxOGJh7OTIxYjU4YjgzOGNlNjEiLCJpYXQiOjE1ODk2MjYxMzV9.4fcDes2z80SwE8hTQejBq8UlmFUw1tRj6anD_dEEnM4",
+        "restricted": false,
+        "_id": "5ebfc318ba921b58b838ce61",
+        "email": "andrasi@gmail.com",
+        "password": "$2a$08$4iY0wY/E4K9wtCroNhWFSO.3qw9d/tyOK.GGGmGbTlW89dfVuYnwK",
+        "__v": 0
+    }
+}</code></pre>
+      <h1 class="small-title-content" id="api-logout">/api/users/logout</h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Removes the token for an user from db.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJmYzMxOGJhOTIxYjU4YjgzOGNlNjEiLCJpYXQiOjE1ODk2MjYxMzV9.4fcDes2z80SwE8hTQejBq8UlmFUw1tRj6anD_dEEnM4"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/logout</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "n": 1,
+       "nModified": 1,
+       "opTime": {
+          "ts": "6827392906936975364",
+          "t": 18
+       },
+       "electionId": "7fffffff0000000000000012",
+       "ok": 1,
+       "$clusterTime": {
+          "clusterTime": "6827392906936975364",
+          "signature": {
+             "hash": "EmxZqAkQ1tTeKVg0HivgEIvmMxU=",
+             "keyId": "6796929880727486466"
+          }
+       },
+       "operationTime": "6827392906936975364"
+    }
+ }</code></pre>
+      <h1 class="small-title-content" id="api-profile">/api/users/profile</h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Adds information about the user profile in db.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJmYzMxOGJhOTIxYjU4YjgzOGNlNjEiLCJpYXQiOjE1ODk2MjY0ODB9.uxvkoOXiPIH4Oe25RQt6MD1V9QBHEtCfet7FQXDcdBU",
+	"firstName": "Andra",
+	"lastName": "Simion"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/profile</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "n": 1,
+       "nModified": 1,
+       "opTime": {
+          "ts": "6827394131002654722",
+          "t": 18
+       },
+       "electionId": "7fffffff0000000000000012",
+       "ok": 1,
+       "$clusterTime": {
+          "clusterTime": "6827394131002654722",
+          "signature": {
+             "hash": "73QSrPARPY2uIYMlLLuCU4Aa33I=",
+             "keyId": "6796929880727486466"
+          }
+       },
+       "operationTime": "6827394131002654722"
+    }
+ }</code></pre>
+      <h1 class="small-title-content" id="api-password">
+        /api/users/changePassword
+      </h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Change the password for an authenticated user.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJmYzMxOGJhOTIxYjU4YjgzOGNlNjEiLCJpYXQiOjE1ODk2MjY0ODB9.uxvkoOXiPIH4Oe25RQt6MD1V9QBHEtCfet7FQXDcdBU",
+	"currentPassword": "andra",
+	"newPassword": "parola"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/changePassword</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "userType": "user",
+       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJmYzMxOGJhOTIxYjU4YjgzOGNlNjEiLCJpYXQiOjE1ODk2MjY0ODB9.uxvkoOXiPIH4Oe25RQt6MD1V9QBHEtCfet7FQXDcdBU",
+       "restricted": false,
+       "_id": "5ebfc318ba921b58b838ce61",
+       "email": "andrasi@gmail.com",
+       "password": "parola",
+       "__v": 0,
+       "firstName": "Andra",
+       "lastName": "Simion"
+    }
+}</code></pre>
+      <h1 class="small-title-content" id="api-restrict">/api/users/restrict</h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        An admin can restrict an user with this route.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiZmVmMmU1Mjk0MjM1M2MzZDI0ZmIiLCJpYXQiOjE1ODk0NjAxNzh9.s0dzXqTGGgbXQono-xXYarUbm6q1-5uu7k6en1VJePQ",
+	"email": "andrasi@gmail.com"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/restrict</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "n": 1,
+       "nModified": 1,
+       "opTime": {
+          "ts": "6827396652148457473",
+          "t": 18
+       },
+       "electionId": "7fffffff0000000000000012",
+       "ok": 1,
+       "$clusterTime": {
+          "clusterTime": "6827396652148457473",
+          "signature": {
+             "hash": "3H76Nk4T1FHuy04aEhk3CpYAcNA=",
+             "keyId": "6796929880727486466"
+          }
+       },
+       "operationTime": "6827396652148457473"
+    }
+ }</code></pre>
+      <h1 class="small-title-content" id="api-unrestrict">
+        /api/users/unrestrict
+      </h1>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        An admin can unrestrict an user with this route.
+      </p>
+      <h1 class="small-subtitle">Request body:</h1>
+      <pre>
+<code>{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiZmVmMmU1Mjk0MjM1M2MzZDI0ZmIiLCJpYXQiOjE1ODk0NjAxNzh9.s0dzXqTGGgbXQono-xXYarUbm6q1-5uu7k6en1VJePQ",
+	"email": "andrasi@gmail.com"
+}</code>
+      </pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3002/api/users/unrestrict</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "n": 1,
+       "nModified": 1,
+       "opTime": {
+          "ts": "6827396811062247425",
+          "t": 18
+       },
+       "electionId": "7fffffff0000000000000012",
+       "ok": 1,
+       "$clusterTime": {
+          "clusterTime": "6827396811062247425",
+          "signature": {
+             "hash": "/IoMsXkq/lLqepyWy3ZZyp39JOM=",
+             "keyId": "6796929880727486466"
+          }
+       },
+       "operationTime": "6827396811062247425"
+    }
+ }</code></pre>
+
+      <!-- Obesity data documentation -->
+      <h1 class="medium-title" id="api-data-response">Obesity data API</h1>
+      <h1 class="small-title" id="api-data-response">Response structure</h1>
+      <p>The structure of the API responses' body is as follows:</p>
+      <ul class="small-category">
+        <li>
+          for successful responses, a JSON object containing the properties:
+          <ul>
+            <li>
+              <mark class="highlight">status</mark>:
+              <mark class="highlight">success</mark>
+            </li>
+            <li>
+              <mark class="highlight">data</mark>: An object, structure detailed
+              for each route below.
+            </li>
+          </ul>
+        </li>
+        <li>
+          for unsuccessful responses, a JSON object containing the properties:
+          <ul>
+            <li>
+              <mark class="highlight">status</mark>:
+              <mark class="highlight">fail</mark>
+            </li>
+            <li>
+              <mark class="highlight">error</mark>: An object containing a
+              message property, and sometimes additional helpful properties.
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- STATES -->
+
+      <h1 class="small-title-content" id="api-states">/api/states</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage for the total population of each country, within
+        the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/states</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+{
+    "status": "success",
+    "data": [
+        {
+            "_id": "5e8c9f221f3c4c71f47a1ccd",
+            "﻿ID": "21933",
+            "Description": "2011",
+            "LocationAbbr": "IL",
+            "LocationDesc": "Illinois",
+            "DataSource": "BRFSS",
+            "Topic": "Obesity / Weight Status",
+            "Data_Value": "27.1",
+            "Sample_Size": "5",
+            "Stratification1": "Total",
+            "StratificationId1": "Total",
+            "LocationDisplayOrder": "OVERALL"
+        },
+        {
+            "_id": "5e8c9f221f3c4c71f47a1cc4",
+            "﻿ID": "26780",
+            "Description": "2011",
+            "LocationAbbr": "CA",
+            "LocationDesc": "California",
+            "DataSource": "BRFSS",
+            "Topic": "Obesity / Weight Status",
+            "Data_Value": "23.8",
+            "Sample_Size": "17",
+            "Stratification1": "Total",
+            "StratificationId1": "Total",
+            "LocationDisplayOrder": "OVERALL"
+        }
+    ]
+    }</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into states db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+    "ID": "671",
+    "Description": "2019",
+    "LocationAbbr": "US",
+    "LocationDesc": "National",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "27.4",
+    "Sample_Size": "470",
+    "Stratification1": "700",
+    "StratificationId1": "Total",
+    "LocationDisplayOrder": "OVERALL"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/states</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+    "status": "success",
+    "data": {
+       "ID": "671",
+       "Description": "2019",
+       "LocationAbbr": "US",
+       "LocationDesc": "National",
+       "DataSource": "BRFSS",
+       "Topic": "Obesity / Weight Status",
+       "Data_Value": "27.4",
+       "Sample_Size": "470",
+       "Stratification1": "700",
+       "StratificationId1": "Total",
+       "LocationDisplayOrder": "OVERALL"
+    }
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into states db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+    "ID": "671",
+    "Description": "2019",
+    "LocationAbbr": "US",
+    "LocationDesc": "National",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "27.4",
+    "Sample_Size": "470",
+    "Stratification1": "700",
+    "StratificationId1": "Total",
+    "LocationDisplayOrder": "OVERALL"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/states?id=5ebd2b39eeb71e05e4fc5349</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the states db. Data is represented by
+        documents with the obesity percentage for the total population of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/states</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+      <!-- AGE -->
+      <h1 class="small-title-content" id="api-age">/api/age</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage filtered by people age for each country, within
+        the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/age</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+   <code>
+{
+  "status": "success",
+  "data": [
+      {
+        "_id": "5e8caf311f3c4c71f47a220d",
+        "﻿ID": "31667",
+        "Description": "2011",
+        "LocationAbbr": "TX",
+        "LocationDesc": "Texas",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "17.5",
+        "Sample_Size": "570",
+        "Stratification1": "18 - 24",
+        "StratificationId1": "18 - 24",
+        "LocationDisplayOrder": "AGEYR1824"
+      },
+      {
+        "_id": "5e8caf311f3c4c71f47a21e4",
+        "﻿ID": "1919",
+        "Description": "2011",
+        "LocationAbbr": "AZ",
+        "LocationDesc": "Arizona",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "18.7",
+        "Sample_Size": "240",
+        "Stratification1": "18 - 24",
+        "StratificationId1": "18 - 24",
+        "LocationDisplayOrder": "AGEYR1824"
+      }
+  ]
+}</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into age db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+  "ID": "20626",
+  "Description": "2011",
+  "LocationAbbr": "WY",
+  "LocationDesc": "Wyoming",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "12.6",
+  "Sample_Size": "303",
+  "Stratification1": "18 - 24",
+  "StratificationId1": "18 - 24",
+  "LocationDisplayOrder": "AGEYR1824"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/age</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+"status": "success",
+"data": {
+  "ID": "20626",
+  "Description": "2011",
+  "LocationAbbr": "WY",
+  "LocationDesc": "Wyoming",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "12.6",
+  "Sample_Size": "303",
+  "Stratification1": "18 - 24",
+  "StratificationId1": "18 - 24",
+  "LocationDisplayOrder": "AGEYR1824"
+  }
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into age db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+  "ID": "20626",
+  "Description": "2011",
+  "LocationAbbr": "WY",
+  "LocationDesc": "Wyoming",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "12.6",
+  "Sample_Size": "303",
+  "Stratification1": "18 - 24",
+  "StratificationId1": "18 - 24",
+  "LocationDisplayOrder": "AGEYR1824"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/age?id=5e8caf311f3c4c71f47a2214</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the age db. Data is represented by
+        documents with the obesity percentage filtered by the age of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/age</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+
+      <!-- GENDER -->
+      <h1 class="small-title-content" id="api-gender">/api/gender</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage filtered by gender, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/gender</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+   <code>
+{
+  "status": "success",
+  "data": [
+      {
+        "_id": "5e8cad651f3c4c71f47a1e83",
+        "﻿ID": "61239",
+        "Description": "2018",
+        "LocationAbbr": "IL",
+        "LocationDesc": "Illinois",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "33.2",
+        "Sample_Size": "2",
+        "Stratification1": "Female",
+        "StratificationId1": "Female",
+        "LocationDisplayOrder": "FEMALE"
+    },
+    {
+        "_id": "5e8cad651f3c4c71f47a1e90",
+        "﻿ID": "62939",
+        "Description": "2018",
+        "LocationAbbr": "MT",
+        "LocationDesc": "Montana",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "25.8",
+        "Sample_Size": "2",
+        "Stratification1": "Female",
+        "StratificationId1": "Female",
+        "LocationDisplayOrder": "FEMALE"
+    }
+  ]
+}</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into gender db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+    "ID": "62939",
+    "Description": "2018",
+    "LocationAbbr": "MT",
+    "LocationDesc": "Montana",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "25.8",
+    "Sample_Size": "2",
+    "Stratification1": "Female",
+    "StratificationId1": "Female",
+    "LocationDisplayOrder": "FEMALE"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/gender</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+"status": "success",
+"data": {
+  "ID": "62939",
+  "Description": "2018",
+  "LocationAbbr": "MT",
+  "LocationDesc": "Montana",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "25.8",
+  "Sample_Size": "2",
+  "Stratification1": "Female",
+  "StratificationId1": "Female",
+  "LocationDisplayOrder": "FEMALE"
+  }
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into gender db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+    "_id": "5e8cad651f3c4c71f47a1e90",
+    "﻿ID": "62939",
+    "Description": "2018",
+    "LocationAbbr": "MT",
+    "LocationDesc": "Montana",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "25.8",
+    "Sample_Size": "2",
+    "Stratification1": "Female",
+    "StratificationId1": "Female",
+    "LocationDisplayOrder": "FEMALE"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/gender?id=5e8cad651f3c4c71f47a1ea9</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the gender db. Data is represented by
+        documents with the obesity percentage filtered by the gender of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/gender</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+
+      <!-- INCOME -->
+      <h1 class="small-title-content" id="api-income">/api/income</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage filtered by people income for each country,
+        within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/income</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+   <code>
+{
+  "_id": "5e8cb0d31f3c4c71f47a259c",
+  "﻿ID": "16143",
+  "Description": "2011",
+  "LocationAbbr": "AL",
+  "LocationDesc": "Alabama",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "34.8",
+  "Sample_Size": "1",
+  "Stratification1": "$15000 - $24999",
+  "StratificationId1": "$15000 - $24999",
+  "LocationDisplayOrder": "000 - $24"
+},
+{
+  "_id": "5e8cb0d31f3c4c71f47a25af",
+  "﻿ID": "6365",
+  "Description": "2011",
+  "LocationAbbr": "ME",
+  "LocationDesc": "Maine",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "33.7",
+  "Sample_Size": "2",
+  "Stratification1": "$15000 - $24999",
+  "StratificationId1": "$15000 - $24999",
+  "LocationDisplayOrder": "000 - $24"
+}</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into income db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+  "ID": "6365",
+  "Description": "2011",
+  "LocationAbbr": "ME",
+  "LocationDesc": "Maine",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "33.7",
+  "Sample_Size": "2",
+  "Stratification1": "$15000 - $24999",
+  "StratificationId1": "$15000 - $24999",
+  "LocationDisplayOrder": "000 - $24"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/income</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+"status": "success",
+"data": {
+  "ID": "6365",
+  "Description": "2011",
+  "LocationAbbr": "ME",
+  "LocationDesc": "Maine",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "33.7",
+  "Sample_Size": "2",
+  "Stratification1": "$15000 - $24999",
+  "StratificationId1": "$15000 - $24999",
+  "LocationDisplayOrder": "000 - $24"
+}
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into income db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+  "ID": "6365",
+  "Description": "2011",
+  "LocationAbbr": "ME",
+  "LocationDesc": "Maine",
+  "DataSource": "BRFSS",
+  "Topic": "Obesity / Weight Status",
+  "Data_Value": "33.7",
+  "Sample_Size": "2",
+  "Stratification1": "$15000 - $24999",
+  "StratificationId1": "$15000 - $24999",
+  "LocationDisplayOrder": "000 - $24"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/income?id=5e8cb0d31f3c4c71f47a259c</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the income db. Data is represented by
+        documents with the obesity percentage filtered by the income of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/income</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+      <!-- ETHNICITY -->
+
+      <h1 class="small-title-content" id="api-ethnicity">/api/ethnicity</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage filtered by ethnicity, within the years
+        2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/ethnicity</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+   <code>
+{
+"status": "success",
+"data": [
+      {
+        "_id": "5e8cafb61f3c4c71f47a23f6",
+        "﻿ID": "36152",
+        "Description": "2011",
+        "LocationAbbr": "AZ",
+        "LocationDesc": "Arizona",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "20.8",
+        "Sample_Size": "82",
+        "Stratification1": "2 or more races",
+        "StratificationId1": "2 or more races",
+        "LocationDisplayOrder": "RACE2PLUS"
+      },
+      {
+        "_id": "5e8cafb61f3c4c71f47a2401",
+        "﻿ID": "37924",
+        "Description": "2011",
+        "LocationAbbr": "IL",
+        "LocationDesc": "Illinois",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "33.4",
+        "Sample_Size": "55",
+        "Stratification1": "2 or more races",
+        "StratificationId1": "2 or more races",
+        "LocationDisplayOrder": "RACE2PLUS"
+      }
+]
+}</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into ethnicity db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+"ID": "671",
+"Description": "2019",
+"LocationAbbr": "US",
+"LocationDesc": "National",
+"DataSource": "BRFSS",
+"Topic": "Obesity / Weight Status",
+"Data_Value": "27.4",
+"Sample_Size": "470",
+"Stratification1": "Asian",
+"StratificationId1": "Asian",
+"LocationDisplayOrder": "RACEASN"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/ethnicity</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+"status": "success",
+"data": {
+    "ID": "671",
+    "Description": "2019",
+    "LocationAbbr": "US",
+    "LocationDesc": "National",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "27.4",
+    "Sample_Size": "470",
+    "Stratification1": "Asian",
+    "StratificationId1": "Asian",
+    "LocationDisplayOrder": "RACEASN"
+}
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into ethnicity db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+"ID": "671",
+"Description": "2019",
+"LocationAbbr": "US",
+"LocationDesc": "National",
+"DataSource": "BRFSS",
+"Topic": "Obesity / Weight Status",
+"Data_Value": "37.4",
+"Sample_Size": "470",
+"Stratification1": "Asian",
+"StratificationId1": "Asian",
+"LocationDisplayOrder": "RACEASN"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/ethnicity?id=5ec2c930108fc525a4e217f6</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the ethnicity db. Data is represented by
+        documents with the obesity percentage filtered by the ethnicity of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/ethnicity</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+
+      <!-- EDUCATION -->
+
+      <h1 class="small-title-content" id="api-education">/api/education</h1>
+      <h1 class="subtitle">GET</h1>
+      <p>
+        Get the all the data from the db. Data is represented by documents with
+        the obesity percentage filtered by education, within the years
+        2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Select only the data for a specific country.
+        </li>
+        <li>year - Select only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          200 - OK
+        </li>
+        <li>
+          400 - There was a problem fetching data
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/education</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+   <code>
+{
+"status": "success",
+"data": [
+      {
+        "_id": "5e8caf761f3c4c71f47a2327",
+        "﻿ID": "15545",
+        "Description": "2011",
+        "LocationAbbr": "DE",
+        "LocationDesc": "Delaware",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "24.1",
+        "Sample_Size": "1",
+        "Stratification1": "College graduate",
+        "StratificationId1": "College graduate",
+        "LocationDisplayOrder": "EDUCOGRAD"
+      },
+      {
+        "_id": "5e8caf761f3c4c71f47a232d",
+        "﻿ID": "37561",
+        "Description": "2011",
+        "LocationAbbr": "IL",
+        "LocationDesc": "Illinois",
+        "DataSource": "BRFSS",
+        "Topic": "Obesity / Weight Status",
+        "Data_Value": "23.4",
+        "Sample_Size": "1",
+        "Stratification1": "College graduate",
+        "StratificationId1": "College graduate",
+        "LocationDisplayOrder": "EDUCOGRAD"
+      }
+]
+}</code></pre>
+      <h1 class="subtitle">POST</h1>
+      <p>
+        Post a document into education db.
+      </p>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+"ID": "671",
+"Description": "2019",
+"LocationAbbr": "US",
+"LocationDesc": "National",
+"DataSource": "BRFSS",
+"Topic": "Obesity / Weight Status",
+"Data_Value": "27.4",
+"Sample_Size": "470",
+"Stratification1": "College graduate",
+"StratificationId1": "College graduate",
+"LocationDisplayOrder": "EDUCOGRAD"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          201 - CREATED
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/education</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>{
+"status": "success",
+"data": {
+    "ID": "671",
+    "Description": "2019",
+    "LocationAbbr": "US",
+    "LocationDesc": "National",
+    "DataSource": "BRFSS",
+    "Topic": "Obesity / Weight Status",
+    "Data_Value": "27.4",
+    "Sample_Size": "470",
+    "Stratification1": "College graduate",
+    "StratificationId1": "College graduate",
+    "LocationDisplayOrder": "EDUCOGRAD"
+}
+}</code></pre>
+      <h1 class="subtitle">PATCH</h1>
+      <p>
+        Modify a document into education db.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          id - The id of the object you want to modify.
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Request body</h1>
+      <pre><code>{
+"ID": "671",
+"Description": "2019",
+"LocationAbbr": "US",
+"LocationDesc": "National",
+"DataSource": "BRFSS",
+"Topic": "Obesity / Weight Status",
+"Data_Value": "37.4",
+"Sample_Size": "470",
+"Stratification1": "College graduate",
+"StratificationId1": "College graduate",
+"LocationDisplayOrder": "EDUCOGRAD"
+}</code></pre>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight"
+        >localhost:3001/api/education?id=5ec2c930108fc525a4e217f6</mark
+      >
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+<code>
+</code></pre>
+      <h1 class="subtitle">DELETE</h1>
+      <p>
+        Delete the all the data from the education db. Data is represented by
+        documents with the obesity percentage filtered by the education of each
+        country, within the years 2011-2018.
+      </p>
+      <h1 class="small-subtitle">Query parameters:</h1>
+      <ul class="small-category">
+        <li>
+          country - Delete only the data for a specific country.
+        </li>
+        <li>year - Delete only the data for a specific year.</li>
+      </ul>
+      <h1 class="small-subtitle">Return codes:</h1>
+      <ul class="small-category">
+        <li>
+          204 - NO_CONTENT
+        </li>
+        <li>
+          400 - Bad Request
+        </li>
+      </ul>
+      <h1 class="small-subtitle">Usage example:</h1>
+      <mark class="highlight">localhost:3001/api/education</mark>
+      <h1 class="small-subtitle">Returned data example:</h1>
+      <pre>
+        <code>
+        </code></pre>
+    </div>
+
+    <div class="clearfix"></div>
+    <footer>
+      <div class="line"></div>
+      <div class="footer-content">
+        <div class="footer-about-us">
+          <h3>Obesity prevalance visualizer</h3>
+          <h3>About us</h3>
+          <p>
+            Why painful the sixteen how minuter looking nor. Subject but why ten
+            earnest husband imagine sixteen brandon.
+          </p>
+          <h3>Contact us</h3>
+          <div class="mail-tel">
+            <i class="fas fa-phone-alt"></i>
+            <p>07865678</p>
+          </div>
+          <div class="mail-tel">
+            <i class="fas fa-envelope-open-text"></i>
+            <p>obesity.prevalance@yahoo.com</p>
+          </div>
+        </div>
+        <div class="footer-information">
+          <h3>Informations</h3>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./statistics.html">Statistics</a></li>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li>
+              <a href="./diseasesArticles.html">Diseases and Conditions</a>
+            </li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-helpful">
+          <h3>Helpful links</h3>
+          <ul>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li>
+              <a href="./diseasesArticles.html">Diseases and Conditions</a>
+            </li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="social-media-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-end">
+        <p>2020 &#64;FilimonSimion. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

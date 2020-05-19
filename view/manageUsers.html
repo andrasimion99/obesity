@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./resources/css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css" />
+    <link rel="stylesheet" type="text/css" href="./vendors/css/ionicons.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/cec80c6e23.js" crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+    <title>Admin</title>
+  </head>
+  <body>
+    <header class="profile-header">
+      <nav id="mySidenav" class="sidenav">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <div class="menu-elem"><a href="index.html">Home</a></div>
+        <div class="menu-elem"><a href="about.html">About</a></div>
+        <div class="menu-elem"><a href="statistics.html">Statistics</a></div>
+        <div class="menu-elem">
+          <a href="healthArticles.html">Health and Wellness</a>
+        </div>
+        <div class="menu-elem">
+          <a href="diseasesArticles.html">Diseases and Conditions</a>
+        </div>
+        <div class="menu-elem"><a href="programs.html">Programs</a></div>
+        <div class="menu-elem"><a href="./documentation.html">Documentation</a></div>
+      </nav>
+        <div class="row">
+            <div id="main">
+              <p class="main-nav" onclick="openNav(window.matchMedia('(max-width: 650px)'))">&#9776;</p>
+            </div>
+        </div> 
+        <!-- <div class="search-btn">
+            <form>
+              <input type="text" name="search" placeholder="" />
+            </form>
+          </div> -->
+          <div id="user_profile">
+            <a href="profile.html" class="user_profile"
+              ><i class="fas fa-user"></i>
+            </a>
+          </div>
+          <div id="logoutButton">
+            <button id="logout" class="button-login">Log out</button>
+          </div>
+          <div id="loginButton">
+            <button id="modalBtn" class="button-login">Log in</button>
+          </div>
+          <div id="loginModal" class="modal">
+            <div id="container" class="modal-content">
+              <span class="closeBtn">&times;</span>
+              <div class="form-container sign-up-container">
+                <form id="signup-form">
+                  <h2>Create Account</h2>
+                  <div class="social-container">
+                    <a href="#" class="social"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a href="#" class="social"
+                      ><i class="fab fa-google-plus-g"></i
+                    ></a>
+                    <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                  </div>
+                  <span>or use your email for registration</span>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    id="signup-email"
+                    name="email"
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="signup-password"
+                    name="password"
+                  />
+                  <p>Let's get started</p>
+                  <button>Sign up</button>
+                </form>
+                <div class="error">
+                  <p id="signup-error-message"></p>
+                </div>
+                <div class="change-1">
+                  <button id="back" class="back">Back</button>
+                </div>
+              </div>
+  
+              <div class="form-container sign-in-container">
+                <form id="signin-form">
+                  <div class="after-signup">
+                    <p id="after-signup"></p>
+                  </div>
+                  <div class="after-signin">
+                    <p id="after-signin"></p>
+                  </div>
+                  <h2>Sign in</h2>
+                  <div class="social-container">
+                    <a href="#" class="social"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a href="#" class="social"
+                      ><i class="fab fa-google-plus-g"></i
+                    ></a>
+                    <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                  </div>
+                  <span>or use your account</span>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    id="signin-email"
+                    name="email"
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="signin-password"
+                    name="password"
+                  />
+                  <a href="#">Forgot your password?</a>
+                  <button>Sign in</button>
+                </form>
+                <div class="change-2">
+                  <p>You don't have an account?</p>
+                  <button id="signUp" class="button-ghost">Sign up</button>
+                </div>
+                <div class="error">
+                  <p id="signin-error-message"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <script src="./scripts/userUtil/register.js"></script>
+        <script src="./scripts/userUtil/logout.js"></script>
+        <script src="./scripts/userUtil/verifyToken.js"></script>
+        <script src="./scripts/userUtil/signin.js"></script>
+        <script src="./scripts/login.js"></script>
+      <div class="profile-title">
+        <h1>Hello, Admin!</h1>
+      </div>
+    </header>
+    <div class="total-profile-container">
+      <div class="left-profile-container">
+        <div class="profile-pic">
+          <div class="profile-name"><p>AR</p></div>
+        </div>
+        <div class="username"><p>Admin</p></div>
+        <div class="user-info">
+          <a href="adminProfile.html"
+            ><div class="profile-info"><i class="fas fa-file-signature"></i> Add article</div></a
+          >
+          <a href="adminStatisticsData.html"
+            ><div class="user-photo"><i class="fas fa-database"></i> Add/Modify data</div></a
+          >
+          <a href="manageUsers.html"
+            ><div class="liked-articles"><i class="fas fa-user-slash"></i> Restrict users</div></a
+          >
+          <a href="./statisticsViewer.html"
+            ><div class="settings"><i class="fas fa-chart-bar"></i> See statistics</div></a
+          >
+        </div>
+      </div>
+      <div class="right-profile-container">
+        <div class="edit-header">
+          <div class="edit-title"><h3>Admin</h3></div>
+          <div class="edit-subtitle"><p>Manage the users of your website</p></div>
+        </div>
+        <div>
+          <p id="after-save"></p>
+        </div>
+        <div class="edit-info">
+          <form>
+            <p class="nume-camp">User you want to restrict</p>
+            <input type="text" id="restrictEmail" name="restrictEmail" placeholder="User's email" />
+            <p class="nume-camp">User you want to unrestrict</p>
+            <input type="text" id="unrestrictEmail" name="unrestrictEmail" placeholder="User's email" />
+          </form>
+        </div>
+        <div class="save-info">
+          <button class="btn">Save</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="./scripts/adminUtil/restrictUser.js"></script>
+
+    <footer>
+      <div class="line"></div>
+      <div class="footer-content">
+        <div class="footer-about-us">
+          <h3>Obesity prevalance visualizer</h3>
+          <h3>About us</h3>
+          <p>
+            Why painful the sixteen how minuter looking nor. Subject but why ten earnest husband imagine sixteen
+            brandon.
+          </p>
+          <h3>Contact us</h3>
+          <div class="mail-tel">
+            <i class="fas fa-phone-alt"></i>
+            <p>07865678</p>
+          </div>
+          <div class="mail-tel">
+            <i class="fas fa-envelope-open-text"></i>
+            <p>obesity.prevalance@yahoo.com</p>
+          </div>
+        </div>
+        <div class="footer-information">
+          <h3>Informations</h3>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./statistics.html">Statistics</a></li>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li><a href="./diseasesArticles.html">Diseases and Conditions</a></li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-helpful">
+          <h3>Helpful links</h3>
+          <ul>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li><a href="./diseasesArticles.html">Diseases and Conditions</a></li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="social-media-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-end">
+        <p>2020 &#64;FilimonSimion. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

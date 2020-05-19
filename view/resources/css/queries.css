@@ -1,0 +1,440 @@
+@media only screen and (max-width: 1320px) {
+    .hero-text-box {
+        width: 30%;
+    }
+    .round-photo-1 {
+        height: 40vh;
+    }
+    .round-photo-1:hover {
+        height: 40vh;
+    }
+    .round-photo-2 {
+        height: 40vh;
+    }
+    .round-photo-2:hover {
+        height: 40vh;
+    }
+    .round-photo-1 h3, .round-photo-2 h3 {
+        font-size: 20px;
+        padding: 0px 2px 0px 2px;
+    }
+    .round-photo-1:hover h3, .round-photo-2:hover h3 {
+        font-size: 22px;
+    }
+    .col-1-of-1 .button-more {
+        margin-right: 50px;
+    }
+
+    .sidenav a {
+        padding: 10px 10px 10px 10px;
+        font-size: 20px;
+    }
+    .sidenav {
+        padding-top: 13%;
+      }
+}
+
+@media only screen and (max-width: 1023px) {
+    .hero-text-box {
+        padding: 0 2%;
+        width: 40%;
+        top: 40%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+    .title h1 {
+        font-size: 160%;
+    }
+    .hero-text-box h2 {
+        font-size: 140%;
+    }
+    .round-photo-1 {
+        height: 35vh;
+    }
+    .round-photo-1:hover {
+        height: 35vh;
+    }
+    .round-photo-2 {
+        height: 35vh;
+    }
+    .round-photo-2:hover {
+        height: 35vh
+    }
+    .sidenav a {
+        padding: 10px 10px 10px 10px;
+        font-size: 17px;
+    }
+    .round-photo-1 {
+        margin-left: 180px;
+    }
+    .round-photo-2 {
+        margin-right: 180px;
+    }
+    .round-photo-1 h3, .round-photo-2 h3 {
+        font-size: 18px;
+        padding: 0px 2px 0px 2px;
+    }
+    .round-photo-1:hover h3, .round-photo-2:hover h3 {
+        font-size: 21px;
+    }
+    .col-1-of-1 .button-more {
+        margin-right: 50px;
+    }
+
+    .total-profile-container {
+        width: 80%;
+    }
+
+    .profile-name {
+        font-size: 25px;
+    }
+
+    .username {
+        font-size: 16px;
+    }
+
+    .article-title {
+        font-size: 16px;
+    }
+
+    .image-text {
+        font-size: 14px;
+    }
+
+    .sidenav {
+        padding-top: 12%;
+      }
+}
+
+@media only screen and (max-width: 776px) {
+    .title h1 {
+        font-size: 160%;
+    }
+    .round-photo-1 {
+        height: 30vh;
+    }
+    .round-photo-1:hover {
+        height: 30vh;
+    }
+    .round-photo-2 {
+        height: 30vh;
+    }
+    .round-photo-2:hover {
+        height: 30vh;
+    }
+    .sidenav a {
+        padding: 10px 10px 10px 10px;
+        font-size: 17px;
+    }
+    .round-photo-1 {
+        margin-left: 160px;
+    }
+    .round-photo-2 {
+        margin-right: 160px;
+    }
+    .round-photo-1 h3, .round-photo-2 h3 {
+        font-size: 18px;
+        padding: 0px 2px 0px 2px;
+    }
+    .round-photo-1:hover h3, .round-photo-2:hover h3 {
+        font-size: 21px;
+    }
+    .footer-information ul li a, .footer-helpful ul li a {
+        font-size: 80%;
+    }
+    .footer-content h3, .footer-content p {
+        font-size: 80%;
+    }
+    .footer-information, .footer-helful {
+        margin-left: 5%;
+    }
+
+    .search-btn input {
+        top: 1%;
+        background-position: 8px 5px; 
+        background-size: 16px;
+        font-size: 12px;
+        padding: 5px 20px 5px 40px;
+      }
+      .search-btn input:focus {
+        width: 87vw;
+      }
+      .profile-name {
+        font-size: 35px;
+    }
+
+      .profile-pic {
+        width: 70%;
+    }
+
+    .article {
+        width: 40%;
+    }
+
+    .article:hover {
+        width: 45%;
+    }
+
+    .image-text {
+        display: none;
+    }
+
+    #loadMore {
+        width: 70%;
+    }
+    .sidenav {
+        padding-top: 18%;
+      }
+}
+
+/*@media only screen and (max-width: 750px) {
+    .title h1 {
+        font-size: 150%;
+    }
+    .hero-text-box h2 {
+        font-size: 140%;
+    }
+    .round-photo-1 {
+        height: 25vh;
+    }
+    .round-photo-1:hover {
+        height: 25vh;
+    }
+    .round-photo-2 {
+        height: 25vh;
+    }
+    .round-photo-2:hover {
+        height: 25vh;
+    }
+    .round-photo-1 { margin-left: 140px; }
+    .round-photo-2 { margin-right: 140px; }
+    .round-photo-1 h3 , .round-photo-2 h3{
+        font-size: 17px;
+        padding: 0px 2px 0px 2px;
+    }
+    .round-photo-1:hover h3, .round-photo-2:hover h3{
+        font-size: 18px;
+    }
+    
+}*/
+
+@media only screen and (max-width: 755px) {
+    .hero-text-box {
+        width: 50%;
+        top: 40%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+    }
+    .title h1 {
+        font-size: 150%;
+    }
+    .hero-text-box h2 {
+        font-size: 140%;
+    }
+    .round-photo-1 {
+        height: 20vh;
+    }
+    .round-photo-1:hover {
+        height: 20vh;
+    }
+    .round-photo-2 {
+        height: 20vh;
+    }
+    .round-photo-2:hover {
+        height: 20vh;
+    }
+    .round-photo-1 {
+        margin-left: 120px;
+    }
+    .round-photo-2 {
+        margin-right: 120px;
+    }
+    .footer-content {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .footer-about-us {
+        margin-left: 2%;
+    }
+    .footer-information {
+        margin-left: 5%;
+    }
+    .footer-helpful {
+        margin-left: 5%;
+    }
+    .footer-end p {
+        font-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hero-text-box h2 {
+        font-size: 140%;
+    }
+    .main-nav {
+        height: 40px;
+    }
+    .round-photo-1 {
+        margin-left: 100px;
+    }
+    .round-photo-2 {
+        margin-right: 100px;
+    }
+    .round-photo-1 h3, .round-photo-2 h3 {
+        font-size: 15px;
+        padding: 0px 2px 0px 2px;
+    }
+    .round-photo-1:hover h3, .round-photo-2:hover h3 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .hero-text-box {
+        padding: 0 2%;
+        width: 60%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .title h1 {
+        font-size: 140%;
+    }
+    .hero-text-box h2 {
+        font-size: 120%;
+    }
+    .main-nav {
+        height: 40px;
+    }
+    .button-login {
+        font-size: 95%;
+        left: 85%;
+        top: 8.5%;
+    }
+
+    .sidenav {
+        background-color: rgb(0, 0, 0, 0.95);
+      }
+      
+      
+}
+
+@media only screen and (max-width: 580px) {
+    .hero-text-box {
+        padding-left: 10px;
+        width: 80%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .title h1 {
+        font-size: 120%;
+    }
+    h2 {
+        font-size: 110%;
+    }
+    .col-1-of-1 h2:hover {
+        font-size: 130%;
+    }
+    .button-more {
+        margin-right: 20px;
+    }
+    .col-1-of-2 p {
+        font-size: 80%;
+    }
+    .col-1-of-1 p {
+        font-size: 90%;
+    }
+    .hero-text-box h2 {
+        font-size: 110%;
+    }
+    .main-nav {
+        height: 40px;
+    }
+    .footer-about-us {
+        flex: 1;
+    }
+    .button-login {
+        font-size: 90%;
+        left: 80%;
+        top: 8.5%;
+    }
+    .footer-helpful {
+        display: none;
+    }
+    .section-about .button-more {
+        width: 90%;
+        text-align: center;
+    }
+    .modal-content {
+        margin: 5% auto;
+        width: 320px;
+    }
+    .col-1-of-1 .button-more {
+        margin-right: 50px;
+    }
+    .profile-name {
+        font-size: 25px;
+    }
+
+    .username {
+        font-size: 12px;
+    }
+
+    .profile-title {
+        font-size: 12px;
+    }
+
+    .photo-preview-container {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .article {
+        width: 40%;
+    }
+
+    .total-profile-container {
+        width: 95%;
+    }
+
+    .article-title {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .sidenav {
+        padding-top: 25%;
+      }
+
+}
+
+@media only screen and (max-width: 320px) {
+    .modal-content {
+        margin: 5% auto;
+        width: 250px;
+    }
+    .hero-text-box {
+        padding-left: 10px;
+        width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .button-login {
+        font-size: 90%;
+        left: 75%;
+        top: 7%;
+    }
+    .footer-information {
+        display: none;
+    }
+    .footer-about {
+        flex: 1;
+        justify-self: center;
+    }
+
+    .sidenav {
+        padding-top: 30%;
+      }
+}

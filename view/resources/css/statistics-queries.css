@@ -1,0 +1,10 @@
+@media (max-width: 1000px) {
+  .statistics-container > *:first-child,
+  .statistics-container > *:last-child {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+  }
+  .statistics-container {
+    grid-template-columns: 1fr;
+  }
+}

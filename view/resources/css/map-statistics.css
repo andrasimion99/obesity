@@ -1,0 +1,106 @@
+.map-statistics {
+    background-image:radial-gradient(#f7f9fa 5%, #e1e6e8 , #d5d9db 60%);
+    margin-top: 1rem;
+    position: relative;
+    border-radius: 10%;
+}
+svg {
+	display:block;
+	width:100%;
+	height:auto;
+	max-height:100vh;
+	display:block;
+	margin: auto;
+}
+
+path {
+    fill-rule:evenodd; 
+    fill:#84888a;
+	transition:fill 180ms;
+    cursor:pointer;
+}
+
+path:hover{
+    fill: rgb(243, 213, 125);
+}
+
+path.selected{
+    fill: #E5BD47;
+}
+
+#box {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    z-index: 1;
+    background-color: #212121;
+    color: #ffffff;
+    border: 0px solid #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: arial;
+  }
+
+select {
+    border-radius: 10%;
+    border: 0px solid #ffffff;
+    margin-left: 5px;
+  }
+
+#year {
+    text-align: center;
+    padding: 5px;
+  }
+
+#legend {
+    height: 50px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10%;
+    background-image: linear-gradient(to right, #cbe9f7 , #a4d8eb, #71cef0, #1ca4d6, #3282b8, #027fad, #142850);
+    border-radius: 10px;
+}
+
+#low {
+    text-align: center;
+    width: 30%;
+    float: left;
+    padding: 10px;
+    margin: 0 auto;
+    padding-top: 3%;
+}
+
+#high {
+    text-align: center;
+    width: 30%;
+    float: right;
+    padding: 10px;
+    padding-top: 3%;
+    margin: 0 auto;
+}
+
+#download {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    padding-top: 10%;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+
+.download-btn {
+    padding: 15px;
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid #2980b9;
+}
+
+.download-btn:hover {
+    color: white;
+    background-color: #2980b9;
+}

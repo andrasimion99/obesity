@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/article.css" />
+    <script
+      src="https://kit.fontawesome.com/cec80c6e23.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./resources/css/queries.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./resources/css/article-queries.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>About us</title>
+    <script src="./scripts/main.js"></script>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div>
+        <nav id="mySidenav" class="sidenav">
+          <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+          <div class="menu-elem"><a href="index.html">Home</a></div>
+          <div class="menu-elem"><a href="about.html">About</a></div>
+          <div class="menu-elem"><a href="statistics.html">Statistics</a></div>
+          <div class="menu-elem">
+            <a href="healthArticles.html">Health and Wellness</a>
+          </div>
+          <div class="menu-elem">
+            <a href="diseasesArticles.html">Diseases and Conditions</a>
+          </div>
+          <div class="menu-elem"><a href="programs.html">Programs</a></div>
+          <div class="menu-elem">
+            <a href="./documentation.html">Documentation</a>
+          </div>
+        </nav>
+        <div class="row">
+          <div id="main">
+            <p
+              class="main-nav"
+              onclick="openNav(window.matchMedia('(max-width: 650px)'))"
+            >
+              &#9776;
+            </p>
+          </div>
+        </div>
+        <!-- <div class="search-btn">
+          <form>
+            <input type="text" name="search" placeholder="Search.." />
+          </form>
+        </div> -->
+        <div id="user_profile">
+          <a href="#" class="user_profile"><i class="fas fa-user"></i> </a>
+        </div>
+        <div id="logoutButton">
+          <button id="logout" class="button-login">Log out</button>
+        </div>
+        <div id="loginButton">
+          <button id="modalBtn" class="button-login">Log in</button>
+        </div>
+        <div id="loginModal" class="modal">
+          <div id="container" class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <div class="form-container sign-up-container">
+              <form id="signup-form">
+                <h2>Create Account</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signup-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signup-password"
+                  name="password"
+                />
+                <p>Let's get started</p>
+                <button>Sign up</button>
+              </form>
+              <div class="error">
+                <p id="signup-error-message"></p>
+              </div>
+              <div class="change-1">
+                <button id="back" class="back">Back</button>
+              </div>
+            </div>
+
+            <div class="form-container sign-in-container">
+              <form id="signin-form">
+                <div class="after-signup">
+                  <p id="after-signup"></p>
+                </div>
+                <div class="after-signin">
+                  <p id="after-signin"></p>
+                </div>
+                <h2>Sign in</h2>
+                <div class="social-container">
+                  <a href="#" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  id="signin-email"
+                  name="email"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="signin-password"
+                  name="password"
+                />
+                <a href="#">Forgot your password?</a>
+                <button>Sign in</button>
+              </form>
+              <div class="change-2">
+                <p>You don't have an account?</p>
+                <button id="signUp" class="button-ghost">Sign up</button>
+              </div>
+              <div class="error">
+                <p id="signin-error-message"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="./scripts/userUtil/register.js"></script>
+      <script src="./scripts/userUtil/logout.js"></script>
+      <script src="./scripts/userUtil/verifyToken.js"></script>
+      <script src="./scripts/userUtil/signin.js"></script>
+      <script src="./scripts/login.js"></script>
+
+      <div class="title">
+        <h1>Obesity prevalance visualizer</h1>
+      </div>
+      <div class="hero-text-box">
+        <h2>
+          Find out everything you want to know about obessity on this site!
+        </h2>
+        <a class="button" href="./about.html">Get started</a>
+        <a class="button" href="./statisticsViewer.html">Show me more</a>
+      </div>
+    </header>
+
+    <section id="article">
+      <div class="container">
+        <div class="page-container">
+          <article class="article-page">
+            <h2 class="about-title">About us</h2>
+            <div class="article-info">
+              <small>
+                <i class="fas fa-pen-alt"></i> Written by Raluca Filimon &#38;
+                Simion Andra March 17, 2020
+              </small>
+            </div>
+            <p>
+              Obesity Prevalence Visualizer is a web application for data
+              visualization. The purpose of this page is to visualize both data
+              and statistics about obesity in USA. We created statistics charts
+              importing data using an API REST service. You can visualize data
+              from different states, categories (total, age, gender, income,
+              education, ethnicity) and compare values from different states,
+              categories and years and export charts in csv, WebP and svg
+              format. You can also create an account on our web application.
+            </p>
+          </article>
+          <aside id="latestArticles" class="card">
+            <h3>Latest articles</h3>
+            <ul class="list-articles">
+              <li>
+                <i class="fas fa-chevron-right"></i
+                ><a href="./article.html"> Obesity - A Preventable Disease </a>
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i
+                ><a href="./article.html">
+                  United Nations Decade of Action on Nutrition
+                </a>
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i
+                ><a href="./article.html"> Health Tips for Healthy Living</a>
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i
+                ><a href="./article.html"> What are obesity and overweight </a>
+              </li>
+              <li>
+                <i class="fas fa-chevron-right"></i
+                ><a href="./article.html"> Passage its ten led hearted </a>
+              </li>
+            </ul>
+          </aside>
+          <aside id="seeStatistics" class="card">
+            <h3>See statistics</h3>
+            <p>
+              It sportsman earnestly ye preserved an on. Moment led family
+              sooner cannot her window pulled any. Or raillery
+            </p>
+            <a href="statistics.html" class="btn">See now</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="line"></div>
+      <div class="footer-content">
+        <div class="footer-about-us">
+          <h3>Obesity prevalance visualizer</h3>
+          <h3>About us</h3>
+          <p>
+            Why painful the sixteen how minuter looking nor. Subject but why ten
+            earnest husband imagine sixteen brandon.
+          </p>
+          <h3>Contact us</h3>
+          <div class="mail-tel">
+            <i class="fas fa-phone-alt"></i>
+            <p>07865678</p>
+          </div>
+          <div class="mail-tel">
+            <i class="fas fa-envelope-open-text"></i>
+            <p>obesity.prevalance@yahoo.com</p>
+          </div>
+        </div>
+        <div class="footer-information">
+          <h3>Informations</h3>
+          <ul>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./statistics.html">Statistics</a></li>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li>
+              <a href="./diseasesArticles.html">Diseases and Conditions</a>
+            </li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-helpful">
+          <h3>Helpful links</h3>
+          <ul>
+            <li><a href="./healthArticles.html">Health and Wellness</a></li>
+            <li>
+              <a href="./diseasesArticles.html">Diseases and Conditions</a>
+            </li>
+            <li><a href="./programs.html">Programs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="social-media-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-end">
+        <p>2020 &#64;FilimonSimion. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>
