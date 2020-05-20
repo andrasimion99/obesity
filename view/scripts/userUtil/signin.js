@@ -14,6 +14,10 @@ async function sendData(data) {
   fetch("https://accounts-tw.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(data),
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+
   })
     .then((response) => response.json())
     .then(async function (res) {
