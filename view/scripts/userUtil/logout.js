@@ -9,7 +9,7 @@ logout.addEventListener("click", (e) => {
 async function sendLogoutRequest(data) {
   console.log(data);
   var bearer = "Bearer " + token;
-  fetch("http://localhost:3002/api/users/logout", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/logout", {
     method: "POST",
     body: JSON.stringify(data),
     // withCredentials: true,

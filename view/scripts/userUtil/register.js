@@ -11,7 +11,7 @@ signup_form.addEventListener("submit", (e) => {
   postData(data);
 });
 async function postData(data) {
-  fetch("http://localhost:3002/api/users/register", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/register", {
     method: "POST",
     body: JSON.stringify(data),
   })

@@ -23,13 +23,12 @@ saveInfo.addEventListener("click", function () {
 });
 
 async function changeInfo(data) {
-  fetch("http://localhost:3002/api/users/profile", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/profile", {
     method: "POST",
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
     .then(async function (data) {
-     
       if (data.status === "success") {
         document.getElementById("after-save").innerHTML =
           "Your data was saved!";
@@ -46,7 +45,7 @@ async function changeInfo(data) {
 }
 
 async function setUserValues(token) {
-  fetch("http://localhost:3002/api/users?token=" + token)
+  fetch("https://accounts-tw.herokuapp.com/api/users?token=" + token)
     .then((response) => response.json())
     .then(async function (data) {
       const firstName = document.getElementById("fname");
@@ -65,7 +64,8 @@ async function setUserValues(token) {
           data.data[0].firstName + " " + data.data[0].lastName;
 
         document.getElementsByClassName("profile-name")[0].innerHTML =
-          data.data[0].firstName.slice(0,1) + data.data[0].lastName.slice(0,1);
+          data.data[0].firstName.slice(0, 1) +
+          data.data[0].lastName.slice(0, 1);
       }
     })
     .catch((error) => {

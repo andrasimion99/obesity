@@ -28,7 +28,7 @@ saveInfo.addEventListener("click", function () {
 });
 
 async function changePassword(data) {
-  fetch("http://localhost:3002/api/users/changePassword", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/changePassword", {
     method: "POST",
     body: JSON.stringify(data),
   })
@@ -50,7 +50,7 @@ async function changePassword(data) {
 }
 
 async function setUserValues(token) {
-  fetch("http://localhost:3002/api/users?token=" + token)
+  fetch("https://accounts-tw.herokuapp.com/api/users?token=" + token)
     .then((response) => response.json())
     .then(async function (data) {
       if (data.data[0].firstName && data.data[0].lastName) {
