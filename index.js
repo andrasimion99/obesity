@@ -1,13 +1,14 @@
 var http = require("http");
 var fs = require("fs");
 var path = require("path");
-const dotenv = require("dotenv");
-const envFound = dotenv.config();
-if (!envFound) {
-  // This error should crash whole process
+// const dotenv = require("dotenv");
+// const envFound = dotenv.config();
+// if (!envFound) {
+//   // This error should crash whole process
 
-  throw new Error("⚠️  Couldn't find .env file  ⚠️");
-}
+//   throw new Error("⚠️  Couldn't find .env file  ⚠️");
+// }
+const port = parseInt(process.env.PORT, 10) || 3000;
 http
   .createServer(function (request, response) {
     console.log("request ", request.url);
@@ -65,6 +66,6 @@ http
       }
     });
   })
-  .listen(parseInt(process.env.PORT, 10));
+  .listen(port);
 
 console.log("Server running at http://localhost:3000/");
