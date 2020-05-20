@@ -11,7 +11,7 @@ signin_form.addEventListener("submit", (e) => {
 });
 async function sendData(data) {
   console.log(data);
-  fetch("https://accounts-tw.herokuapp.com/api/users/login", {
+  fetch("https://cors-anywhere.herokuapp.com/https://accounts-tw.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
