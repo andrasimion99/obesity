@@ -10,7 +10,7 @@ async function createLineChart(seriesName, country, seriesValue) {
   var url = "";
   if (seriesValue) {
     url =
-      "http://localhost:3001/api/" +
+      "https://api-tw.herokuapp.com/api/" +
       seriesName +
       "?country=" +
       country +
@@ -19,7 +19,8 @@ async function createLineChart(seriesName, country, seriesValue) {
       "=" +
       seriesValue;
   } else {
-    url = "http://localhost:3001/api/" + seriesName + "?country=" + country;
+    url =
+      "https://api-tw.herokuapp.com/api/" + seriesName + "?country=" + country;
     seriesValue = "total";
   }
   fetch(url)

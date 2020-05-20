@@ -24,14 +24,14 @@ async function createLineChartCountries(seriesName, types, seriesValue) {
   var url = "";
   if (seriesValue) {
     url =
-      "http://localhost:3001/api/" +
+      "https://api-tw.herokuapp.com/api/" +
       seriesName +
       "?" +
       seriesName +
       "=" +
       seriesValue;
   } else {
-    url = "http://localhost:3001/api/" + seriesName;
+    url = "https://api-tw.herokuapp.com/api/" + seriesName;
   }
   fetch(url)
     .then((data) => {

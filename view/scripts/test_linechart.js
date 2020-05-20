@@ -1,6 +1,6 @@
 async function createLineChart(seriesName, country, seriesValue) {
   url =
-    "http://localhost:3001/api/" +
+    "https://api-tw.herokuapp.com/api/" +
     seriesName +
     "?country=" +
     country +
@@ -8,7 +8,7 @@ async function createLineChart(seriesName, country, seriesValue) {
     seriesName +
     "=" +
     seriesValue;
-  /*url = "http://localhost:3001/api/age?country=Alaska&age=18%20-%2024";*/
+  /*url = "https://api-tw.herokuapp.com/api/age?country=Alaska&age=18%20-%2024";*/
   fetch(url)
     .then((data) => {
       return data.json();

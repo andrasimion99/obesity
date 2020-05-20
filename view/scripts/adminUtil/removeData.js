@@ -17,7 +17,7 @@ saveInfo.addEventListener("click", function () {
 
 async function removeStatsData(data, category) {
   fetch(
-    "http://localhost:3001/api/" +
+    "https://api-tw.herokuapp.com/api/" +
       category +
       "?country=" +
       data.LocationDesc +

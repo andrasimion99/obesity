@@ -1,5 +1,5 @@
 async function addCountries() {
-  await fetch("http://localhost:3001/api/states?year=2018")
+  await fetch("https://api-tw.herokuapp.com/api/states?year=2018")
     .then((data) => {
       return data.json();
     })

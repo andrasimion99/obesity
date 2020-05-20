@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         var countryName = await country.getAttribute("data-name");
         if (subcategory) {
           url =
-            "http://localhost:3001/api/" +
+            "https://api-tw.herokuapp.com/api/" +
             category +
             "?country=" +
             countryName +
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             subcategory;
         } else {
           url =
-            "http://localhost:3001/api/" +
+            "https://api-tw.herokuapp.com/api/" +
             category +
             "?country=" +
             countryName +
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     var url = "";
     if (subcategory) {
       url =
-        "http://localhost:3001/api/" +
+        "https://api-tw.herokuapp.com/api/" +
         category +
         "?year=" +
         year +
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         "=" +
         subcategory;
     } else {
-      url = "http://localhost:3001/api/" + category + "?year=" + year;
+      url = "https://api-tw.herokuapp.com/api/" + category + "?year=" + year;
     }
     await fetch(url)
       .then((data) => {

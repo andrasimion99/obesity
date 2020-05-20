@@ -17,7 +17,9 @@ function sortDescByProperty(property) {
   };
 }
 async function createLineChartSeries(seriesName, country, types) {
-  fetch("http://localhost:3001/api/" + seriesName + "?country=" + country)
+  fetch(
+    "https://api-tw.herokuapp.com/api/" + seriesName + "?country=" + country
+  )
     .then((data) => {
       return data.json();
     })

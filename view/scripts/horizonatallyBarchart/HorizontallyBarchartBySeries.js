@@ -5,7 +5,9 @@
 //   );
 
 async function HorizontallyBarchartBySeries(seriesName, types, country) {
-  await fetch("http://localhost:3001/api/" + seriesName + "?country=" + country)
+  await fetch(
+    "https://api-tw.herokuapp.com/api/" + seriesName + "?country=" + country
+  )
     .then((data) => {
       return data.json();
     })

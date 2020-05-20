@@ -2,7 +2,7 @@ async function createBarChartYear(seriesName, country, seriesValue) {
   var url = "";
   if (seriesValue) {
     url =
-      "http://localhost:3001/api/" +
+      "https://api-tw.herokuapp.com/api/" +
       seriesName +
       "?country=" +
       country +
@@ -11,7 +11,7 @@ async function createBarChartYear(seriesName, country, seriesValue) {
       "=" +
       seriesValue;
   } else {
-    url = "http://localhost:3001/api/" + seriesName + "?country=" + country;
+    url = "https://api-tw.herokuapp.com/api/" + seriesName + "?country=" + country;
   }
   await fetch(url)
     .then((data) => {

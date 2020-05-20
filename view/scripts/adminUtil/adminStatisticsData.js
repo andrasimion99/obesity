@@ -25,23 +25,23 @@ saveInfo.addEventListener("click", function () {
 });
 
 async function statsData(data, category) {
-    fetch("http://localhost:3001/api/" + category, {
-      method: "POST",
-      body: JSON.stringify(data),
+  fetch("https://api-tw.herokuapp.com/api/" + category, {
+    method: "POST",
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then(async function (data) {
+      if (data.status === "success") {
+        document.getElementById("after-save").innerHTML =
+          "Your data was saved!";
+        document.getElementById("after-save").style.color = "green";
+      } else {
+        document.getElementById("after-save").innerHTML =
+          "Your data couldn't be saved!";
+        document.getElementById("after-save").style.color = "red";
+      }
     })
-      .then((response) => response.json())
-      .then(async function (data) {
-        if (data.status === "success") {
-          document.getElementById("after-save").innerHTML =
-            "Your data was saved!";
-          document.getElementById("after-save").style.color = "green";
-        } else {
-          document.getElementById("after-save").innerHTML =
-            "Your data couldn't be saved!";
-          document.getElementById("after-save").style.color = "red";
-        }
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-      });
-  }
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+}
