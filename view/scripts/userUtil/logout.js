@@ -32,18 +32,28 @@ async function sendLogoutRequest(data) {
         var logoutButton = document.getElementById("logoutButton");
         logoutButton.style.display = "none";
         if (
-          window.location.href == "http://localhost:3000/profile.html" ||
-          window.location.href == "http://localhost:3000/settings.html" ||
-          window.location.href == "http://localhost:3000/likedArticles.html" ||
-          window.location.href == "http://localhost:3000/uploadPhoto.html" ||
-          window.location.href == "http://localhost:3000/adminProfile.html" ||
           window.location.href ==
-            "http://localhost:3000/adminStatisticsData.html" ||
-          window.location.href == "http://localhost:3000/adminStats.html" ||
-          window.location.href == "http://localhost:3000/removeData.html" ||
-          window.location.href == "http://localhost:3000/manageUsers.html"
+            "https://obesity-tw.herokuapp.com/profile.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/settings.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/likedArticles.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/uploadPhoto.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/adminProfile.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/adminStatisticsData.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/adminStats.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/removeData.html" ||
+          window.location.href ==
+            "https://obesity-tw.herokuapp.com/manageUsers.html"
         ) {
-          window.location.replace("http://localhost:3000/index.html");
+          window.location.replace(
+            "https://obesity-tw.herokuapp.com/index.html"
+          );
         }
       }
     })

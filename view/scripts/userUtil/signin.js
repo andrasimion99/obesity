@@ -10,14 +10,10 @@ signin_form.addEventListener("submit", (e) => {
   sendData(data);
 });
 async function sendData(data) {
-  console.log(data);
-  fetch("https://cors-anywhere.herokuapp.com/https://accounts-tw.herokuapp.com/api/users/login", {
+  // https://cors-anywhere.herokuapp.com/
+  fetch("https://accounts-tw.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(data),
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-
   })
     .then((response) => response.json())
     .then(async function (res) {
