@@ -22,7 +22,7 @@ saveInfo.addEventListener("click", function () {
 });
 
 async function restrictUser(data) {
-  fetch("http://localhost:3002/api/users/restrict", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/restrict", {
     method: "POST",
     body: JSON.stringify(data),
   })
@@ -44,7 +44,7 @@ async function restrictUser(data) {
 }
 
 async function unrestrictUser(data) {
-  fetch("http://localhost:3002/api/users/unrestrict", {
+  fetch("https://accounts-tw.herokuapp.com/api/users/unrestrict", {
     method: "POST",
     body: JSON.stringify(data),
   })

@@ -61,4 +61,4 @@ http
   })
   .listen(port);
 
-console.log("Server running at http://localhost:3000/");
+console.log("Server running at https://obesity-tw.herokuapp.com/");

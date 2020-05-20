@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 async function setProfileRoute(token) {
-  fetch("http://localhost:3002/api/users?token=" + token)
+  fetch("https://accounts-tw.herokuapp.com/api/users?token=" + token)
     .then((response) => response.json())
     .then(async function (data) {
       if (data.data[0].userType === "user") {
