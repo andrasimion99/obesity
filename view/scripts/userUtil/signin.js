@@ -14,6 +14,7 @@ async function sendData(data) {
   fetch("https://accounts-tw.herokuapp.com/api/users/login", {
     method: "POST",
     body: JSON.stringify(data),
+    mode: "no-cors",
   })
     .then((response) => response.json())
     .then(async function (res) {
