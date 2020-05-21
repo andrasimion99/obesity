@@ -1,5 +1,7 @@
 async function createBarChartAll(seriesName, country) {
-  fetch("https://api-tw.herokuapp.com/api" + seriesName + "?country=" + country)
+  fetch(
+    "https://api-tw.herokuapp.com/api/" + seriesName + "?country=" + country
+  )
     .then((data) => {
       return data.json();
     })
